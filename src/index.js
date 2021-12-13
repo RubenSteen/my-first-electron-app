@@ -54,16 +54,18 @@ app.on('activate', () => {
 });
 
 // All of the Node.js APIs are available in the preload process.
-  // It has the same sandbox as a Chrome extension.
-  var phidget22 = require('phidget22');
-  var conn = new phidget22.Connection(5661, 'localhost');
-  //conn.connect();
+// It has the same sandbox as a Chrome extension.
+var phidget22 = require('phidget22');
+var conn = new phidget22.Connection(5661, 'localhost');
+conn.connect();
 
 // Attach listener in the main process with the given ID
-ipcMain.on('request-mainprocess-action', (event, data) => {
+ipcMain.on('turn-on-lights', (event, data) => {
+  console.log("turning lights on.")
 
     var openPromiseList = [];
-    var createdDigitalOutputs = [];
+
+    var digitalOutputs = [];
 
     for (const property in data.phidget) {
 
@@ -74,8 +76,7 @@ ipcMain.on('request-mainprocess-action', (event, data) => {
         var channel = data.phidget[property][key];
         var variableName = 'digitalOutput' + serial+channel;
 
-        createdDigitalOutputs.push(variableName)
-
+        digitalOutputs.push(variableName)
 
         eval('var ' + variableName + '= new phidget22.DigitalOutput();');
 
@@ -90,21 +91,32 @@ ipcMain.on('request-mainprocess-action', (event, data) => {
     	Promise.all(openPromiseList).then(function(values) {
 
       //Do stuff with your Phidgets here or in your event handlers.
-      for (const property in createdDigitalOutputs) {
-        var digitalOutput = createdDigitalOutputs[property];
+      for (const property in digitalOutputs) {
+        var digitalOutput = digitalOutputs[property];
         eval(digitalOutput + '.setDutyCycle(1);');
       }
 
       //Close your Phidgets once the program is done.
       setTimeout(function () {
-        for (const property in createdDigitalOutputs) {
-          var digitalOutput = createdDigitalOutputs[property];
+
+        for (const property in digitalOutputs) {
+          var digitalOutput = digitalOutputs[property];
           eval(digitalOutput + '.close();');
         }
+
+        // ipcMain.emit('turn-off-lights');
       }, 5000);
       
     });
 
   // Return some data to the renderer process with the mainprocess-response ID
   event.sender.send('mainprocess-response', data);
+
+  console.log("lights turned on.")
+});
+
+ipcMain.on('turn-off-lights', (event, data) => {
+
+  // Some code so it closes the active lights
+
 });
