@@ -72,12 +72,12 @@ conn.connect().then(function(data) {
 
 let registeredPhidgets = [];
 
-setTimeout(function ()  {
-  registeredPhidgets.forEach(registeredPhidget => {
-    registeredPhidget.deactivate();
-    registeredPhidget.close();
-  })
-})
+// setTimeout(function ()  {
+//   registeredPhidgets.forEach(registeredPhidget => {
+//     registeredPhidget.deactivate();
+//     registeredPhidget.close();
+//   })
+// })
 
 // Register the whitelisted phidgets that are passed from the renderer process
 ipcMain.on('register-phidgets', (event, projects) => {
@@ -87,20 +87,43 @@ ipcMain.on('register-phidgets', (event, projects) => {
   //console.log(projecten)
 
   // Register the phidget to variable registeredPhidgets if it has detected it
-  // for (project in projects) {
-  //   for (key in projects[project]) {
-  //     for (phidgetSerialNumber in projects[project]['phidget']) {
-  //       for (phidgetChannel in projects[project]['phidget'][phidgetSerialNumber]) {
-  //         registeredPhidgets.push(new PhidgetLight(phidgetSerialNumber, phidgetChannel));
-  //       }
-  //     }
-  //   }
-  // }
+  for (projectKey in projects) {
+    projectPhidget = projects[projectKey]['phidget'];
+    for (phidgetSerial in projectPhidget) {
+      for (phidgetChannel in projectPhidget[phidgetSerial]) {
+        let channel = projectPhidget[phidgetSerial][phidgetChannel];
 
-  //registeredPhidgets.push(new PhidgetLight(257037, 15));
+        registeredPhidgets.push(new PhidgetLight(phidgetSerial, channel));
+      }
+    }
+  }
 
-  var phidget = new PhidgetLight(257037, 15);
-  phidget.activate()
+
+  setTimeout(() => {
+    registeredPhidgets
+      // and deactivate
+      .forEach(phidgetLight => phidgetLight.activate());
+  }, 100);
+
+  setTimeout(() => {
+    registeredPhidgets
+      .filter(value => value.isActivated())
+      // and deactivate
+      .forEach(phidgetLight => phidgetLight.deactivate());
+  }, 2000);
+
+  
+  
+
+
+  //registeredPhidgets.push(new PhidgetLight(phidgetSerialNumber, phidgetChannel));
+
+  // THIS WORKS
+  // var phidget = new PhidgetLight(257037, 15);
+  // setTimeout(() => {   phidget.activate(); }, 15);
+  // setTimeout(() => {   phidget.deactivate(); }, 2000);
+ 
+  
 
   //console.log(registeredPhidgets)
   // Return some data to the renderer process with the mainprocess-response ID
@@ -173,7 +196,6 @@ class PhidgetLight {
   }
 
   activate() {
-    console.log('hitting activate')
     if (this.open) {
       this.digitalOutput.setDutyCycle(1).catch(function (err) {
         console.error("Error during open:", err);
@@ -186,7 +208,9 @@ class PhidgetLight {
 
   deactivate() {
     if (this.open) {
-      // this.digitalOutput... whatever you have to do if to deactivate
+      this.digitalOutput.setDutyCycle(0).catch(function (err) {
+        console.error("Error during open:", err);
+      });
       this.activated = false;
       return true;
     }
