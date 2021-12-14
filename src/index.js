@@ -60,6 +60,7 @@ app.on('activate', () => {
 // Require phidget (https://www.phidgets.com/)
 // Using the module : https://www.phidgets.com/?tier=3&catid=2&pcid=1&prodid=1019 (1202_2 - PhidgetInterfaceKit 0/16/16)
 var phidget22 = require('phidget22');
+const { exit } = require('process');
 
 // Create connection to Phidget
 var conn = new phidget22.Connection(parseInt(process.env.PHIDGET_PORT), process.env.PHIDGET_HOST);
@@ -69,7 +70,7 @@ conn.connect().then(function(data) {
 	console.error(`Error during connecting to phidget at ${process.env.PHIDGET_HOST}:${process.env.PHIDGET_PORT}`, err);
 });
 
-let registeredPhidgets = {};
+let registeredPhidgets = [];
 
 setTimeout(function ()  {
   registeredPhidgets.forEach(registeredPhidget => {
@@ -79,30 +80,36 @@ setTimeout(function ()  {
 })
 
 // Register the whitelisted phidgets that are passed from the renderer process
-ipcMain.on('register-phidgets', (event, projecten) => {
+ipcMain.on('register-phidgets', (event, projects) => {
 
   //Do something with the phidget API so it can detect if the phidgets are connected to the PC
 
-  console.log(projecten)
+  //console.log(projecten)
 
   // Register the phidget to variable registeredPhidgets if it has detected it
-  for (project in projecten) {
-    for (phidgetSerialNumber in project['phidget']) {
-      for (phidgetChannel in phidgetSerialNumber) {
-        registeredPhidgets.push(new PhidgetLight(phidgetSerialNumber, phidgetChannel));
-      }
-    }
-  }
+  // for (project in projects) {
+  //   for (key in projects[project]) {
+  //     for (phidgetSerialNumber in projects[project]['phidget']) {
+  //       for (phidgetChannel in projects[project]['phidget'][phidgetSerialNumber]) {
+  //         registeredPhidgets.push(new PhidgetLight(phidgetSerialNumber, phidgetChannel));
+  //       }
+  //     }
+  //   }
+  // }
 
+  //registeredPhidgets.push(new PhidgetLight(257037, 15));
+
+  var phidget = new PhidgetLight(257037, 15);
+  phidget.activate()
+
+  //console.log(registeredPhidgets)
   // Return some data to the renderer process with the mainprocess-response ID
-  event.sender.send('register-phidgets-response', registeredPhidgets);
+  //event.sender.send('register-phidgets-response', registeredPhidgets);
 });
 
 
 // Function is getting called from renderer.js
 ipcMain.on('turn-on-lights', (event, data) => {
-
-  console.info(data)
 
   // Looping over the phidget data that is being send by the renderer process
   for (const property in data.phidget) {
@@ -158,13 +165,19 @@ class PhidgetLight {
     this.digitalOutput = new phidget22.DigitalOutput();
     this.digitalOutput.setDeviceSerialNumber(this.serial);
     this.digitalOutput.setChannel(this.channel);
-    this.digitalOutput.open(5000).then(function () {this.open = true;});
+    this.digitalOutput.open(5000).catch(function (err) {
+      console.error("Error during open:", err);
+    });
+    this.open = true;
     this.activated = false;
   }
 
   activate() {
+    console.log('hitting activate')
     if (this.open) {
-      this.digitalOutput.setDutyCycle(1);
+      this.digitalOutput.setDutyCycle(1).catch(function (err) {
+        console.error("Error during open:", err);
+      });
       this.activated = true;
       return true;
     }
