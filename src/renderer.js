@@ -2,6 +2,11 @@ const { ipcRenderer } = require('electron');
 
  let data = {
     "loading": false,
+    "allowed_phidgets": {
+        "257037" : "A",
+        "312483" : "B",
+        "478550" : "C",
+    },
     "projecten": {
       1: {
         "titel": "Keizersbrug",
@@ -103,15 +108,15 @@ const { ipcRenderer } = require('electron');
     }
   }
 
-// // // Add the event listener for the response from the main process
-// ipcRenderer.on('mainprocess-response', (event, data) => {
-//     console.log(data); // prints "Hello World!"
-// });
+// Call the register phidgets function from the main process
+ipcRenderer.send('register-phidgets', data.allowed_phidgets);
 
-// // // Send information to the main process
-// // // if a listener has been set, then the main process
-// // // will react to the request !
-// ipcRenderer.send('turn-on-lights', data);
+// Listen for the response from register-phidgets
+ipcRenderer.on('register-phidgets-response', (event, data) => {
+    console.log(data);
+});
+
+
 
 
 document.getElementById('button1').addEventListener('click', function(){

@@ -69,53 +69,70 @@ conn.connect().then(function(data) {
 	console.error(`Error during connecting to phidget at ${process.env.PHIDGET_HOST}:${process.env.PHIDGET_PORT}`, err);
 });
 
+var registeredPhidgets = {};
+
+// Register the whitelisted phidgets that are passed from the renderer process
+ipcMain.on('register-phidgets', (event, phidgets) => {
+
+  //Do something with the phidget API so it can detect if the phidgets are connected to the PC
+
+  console.log(phidgets)
+
+  // Register the phidget to variable registeredPhidgets if it has detected it
+
+  // Return some data to the renderer process with the mainprocess-response ID
+  event.sender.send('register-phidgets-response', registeredPhidgets);
+});
+
+
 // Function is getting called from renderer.js
 ipcMain.on('turn-on-lights', (event, data) => {
-  console.log("turning lights on.")
 
-    var openPromiseList = [];
+  console.info(data)
 
-    var digitalOutputs = [];
+  var openPromiseList = [];
 
-    // Looping over the phidget data that is being send by the renderer process
-    for (const property in data.phidget) {
+  var digitalOutputs = [];
 
-      // Getting the serials of the phidget so I know what phidget to control
-      // Example: 257037
-      var serial = property;
+  // Looping over the phidget data that is being send by the renderer process
+  for (const property in data.phidget) {
 
-      for (const key in data.phidget[property]) {
+    // Getting the serials of the phidget so I know what phidget to control
+    // Example: 257037
+    var serial = property;
 
-        // Setting the channels of the specified module by serial
-        // Example: 15
-        var channel = data.phidget[property][key];
+    for (const key in data.phidget[property]) {
 
-        // Setting the dynamic variable name i want to create so I can interact with the Phidget API
-        // Example: digitalOutput$257037_15
-        var variableName = `digitalOutput$${serial}_${channel}`;
+      // Setting the channels of the specified module by serial
+      // Example: 15
+      var channel = data.phidget[property][key];
 
-        // Remember which variables were created so I can loop over them later and turn the on/off
-        digitalOutputs.push(variableName)
+      // Setting the dynamic variable name i want to create so I can interact with the Phidget API
+      // Example: digitalOutput$257037_15
+      var variableName = `digitalOutput$${serial}_${channel}`;
 
-        // Creating the actual variable name
-        //eval('var ' + variableName + '= new phidget22.DigitalOutput();');
-        eval(`var ${variableName} = new phidget22.DigitalOutput();`);
+      // Remember which variables were created so I can loop over them later and turn the on/off
+      digitalOutputs.push(variableName)
 
-        // Setting the serials of the module I want to communicate with
-        //eval(variableName + '.setDeviceSerialNumber(serial);');
-        eval(`${variableName}.setDeviceSerialNumber(${serial});`);
+      // Creating the actual variable name
+      //eval('var ' + variableName + '= new phidget22.DigitalOutput();');
+      eval(`var ${variableName} = new phidget22.DigitalOutput();`);
 
-        // Setting the channels I want to turn on/off
-        //eval(variableName + '.setChannel(channel);');
-        eval(`${variableName}.setChannel(${channel});`);
+      // Setting the serials of the module I want to communicate with
+      //eval(variableName + '.setDeviceSerialNumber(serial);');
+      eval(`${variableName}.setDeviceSerialNumber(${serial});`);
 
-        // Pushing the to the openPromiseList which i don't really understand what for purpose it server, also not sure about the open function.
-        openPromiseList.push(eval(variableName).open(5000))
-      }
+      // Setting the channels I want to turn on/off
+      //eval(variableName + '.setChannel(channel);');
+      eval(`${variableName}.setChannel(${channel});`);
+
+      // Pushing the to the openPromiseList which i don't really understand what for purpose it server, also not sure about the open function.
+      openPromiseList.push(eval(variableName).open(5000))
     }
+  }
 
 
-    Promise.all(openPromiseList).then(function(values) {
+  Promise.all(openPromiseList).then(function(values) {
 
     // This is how I currently turn the channels on the phidgets to the 'on' state
     for (const arrayKey in digitalOutputs) {
