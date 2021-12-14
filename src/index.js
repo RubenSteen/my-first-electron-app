@@ -7,11 +7,12 @@ if (require('electron-squirrel-startup')) { // eslint-disable-line global-requir
   app.quit();
 }
 
+// Creating app window
 const createWindow = () => {
   // Create the browser window.
   const mainWindow = new BrowserWindow({
     show: false,
-    //frame: false,
+    //frame: false, // Makes the application fullscreen without close buttons
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       nodeIntegration: true,
@@ -54,20 +55,21 @@ app.on('activate', () => {
   }
 });
 
-// All of the Node.js APIs are available in the preload process.
-// It has the same sandbox as a Chrome extension.
+
+
+// Require phidget (https://www.phidgets.com/)
+// Using the module : https://www.phidgets.com/?tier=3&catid=2&pcid=1&prodid=1019 (1202_2 - PhidgetInterfaceKit 0/16/16)
 var phidget22 = require('phidget22');
 
+// Create connection to Phidget
 var conn = new phidget22.Connection(parseInt(process.env.PHIDGET_PORT), process.env.PHIDGET_HOST);
-//conn.connect();
-
 conn.connect().then(function(data) {
   console.log(`Phidget connection succesfull at ${process.env.PHIDGET_HOST}:${process.env.PHIDGET_PORT}`);
 }).catch(function (err) {
 	console.error(`Error during connecting to phidget at ${process.env.PHIDGET_HOST}:${process.env.PHIDGET_PORT}`, err);
 });
 
-// Attach listener in the main process with the given ID
+// Function is getting called from renderer.js
 ipcMain.on('turn-on-lights', (event, data) => {
   console.log("turning lights on.")
 
@@ -75,47 +77,65 @@ ipcMain.on('turn-on-lights', (event, data) => {
 
     var digitalOutputs = [];
 
+    // Looping over the phidget data that is being send by the renderer process
     for (const property in data.phidget) {
 
+      // Getting the serials of the phidget so I know what phidget to control
+      // Example: 257037
       var serial = property;
 
       for (const key in data.phidget[property]) {
 
+        // Setting the channels of the specified module by serial
+        // Example: 15
         var channel = data.phidget[property][key];
-        var variableName = 'digitalOutput' + serial+channel;
 
+        // Setting the dynamic variable name i want to create so I can interact with the Phidget API
+        // Example: digitalOutput$257037_15
+        var variableName = `digitalOutput$${serial}_${channel}`;
+
+        // Remember which variables were created so I can loop over them later and turn the on/off
         digitalOutputs.push(variableName)
 
-        eval('var ' + variableName + '= new phidget22.DigitalOutput();');
+        // Creating the actual variable name
+        //eval('var ' + variableName + '= new phidget22.DigitalOutput();');
+        eval(`var ${variableName} = new phidget22.DigitalOutput();`);
 
-        eval(variableName + '.setDeviceSerialNumber(serial);');
+        // Setting the serials of the module I want to communicate with
+        //eval(variableName + '.setDeviceSerialNumber(serial);');
+        eval(`${variableName}.setDeviceSerialNumber(${serial});`);
 
-        eval(variableName + '.setChannel(channel);');
+        // Setting the channels I want to turn on/off
+        //eval(variableName + '.setChannel(channel);');
+        eval(`${variableName}.setChannel(${channel});`);
 
+        // Pushing the to the openPromiseList which i don't really understand what for purpose it server, also not sure about the open function.
         openPromiseList.push(eval(variableName).open(5000))
       }
     }
 
-    	Promise.all(openPromiseList).then(function(values) {
 
-      //Do stuff with your Phidgets here or in your event handlers.
-      for (const property in digitalOutputs) {
-        var digitalOutput = digitalOutputs[property];
-        eval(digitalOutput + '.setDutyCycle(1);');
+    Promise.all(openPromiseList).then(function(values) {
+
+    // This is how I currently turn the channels on the phidgets to the 'on' state
+    for (const arrayKey in digitalOutputs) {
+      var digitalOutput = digitalOutputs[arrayKey];
+      eval(digitalOutput + '.setDutyCycle(1);');
+    }
+
+    //Close your Phidgets once the program is done.
+    setTimeout(function () {
+
+      for (const arrayKey in digitalOutputs) {
+        var digitalOutput = digitalOutputs[arrayKey];
+        eval(digitalOutput + '.close();');
       }
 
-      //Close your Phidgets once the program is done.
-      setTimeout(function () {
-
-        for (const property in digitalOutputs) {
-          var digitalOutput = digitalOutputs[property];
-          eval(digitalOutput + '.close();');
-        }
-
-        // ipcMain.emit('turn-off-lights');
-      }, 5000);
+      // Some function that can be used to call the function below
+      // ipcMain.emit('turn-off-lights');
+    }, 5000);
       
-    });
+  });
 
   // Return some data to the renderer process with the mainprocess-response ID
   event.sender.send('mainprocess-response', data);
@@ -125,6 +145,6 @@ ipcMain.on('turn-on-lights', (event, data) => {
 
 ipcMain.on('turn-off-lights', (event, data) => {
 
-  // Some code so it closes the active lights
+  // Finally I want this function to turn off all the active channels.
 
 });
