@@ -45,6 +45,7 @@
     }
   },
   "dependencies": {
+    "dotenv": "^10.0.0",
     "electron-squirrel-startup": "^1.0.0",
     "phidget22": "^2.8.1"
   },

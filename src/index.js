@@ -1,5 +1,6 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
+require('dotenv').config({ path: '.env' })
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
 if (require('electron-squirrel-startup')) { // eslint-disable-line global-require
@@ -56,8 +57,15 @@ app.on('activate', () => {
 // All of the Node.js APIs are available in the preload process.
 // It has the same sandbox as a Chrome extension.
 var phidget22 = require('phidget22');
-var conn = new phidget22.Connection(5661, 'localhost');
-conn.connect();
+
+var conn = new phidget22.Connection(parseInt(process.env.PHIDGET_PORT), process.env.PHIDGET_HOST);
+//conn.connect();
+
+conn.connect().then(function(data) {
+  console.log(`Phidget connection succesfull at ${process.env.PHIDGET_HOST}:${process.env.PHIDGET_PORT}`);
+}).catch(function (err) {
+	console.error(`Error during connecting to phidget at ${process.env.PHIDGET_HOST}:${process.env.PHIDGET_PORT}`, err);
+});
 
 // Attach listener in the main process with the given ID
 ipcMain.on('turn-on-lights', (event, data) => {
