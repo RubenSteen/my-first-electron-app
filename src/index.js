@@ -69,40 +69,15 @@ conn.connect().then(function(data) {
 	console.error(`Error during connecting to phidget at ${process.env.PHIDGET_HOST}:${process.env.PHIDGET_PORT}`, err);
 });
 
-let registeredPhidgets = {};
-
-setTimeout(function ()  {
-  registeredPhidgets.forEach(registeredPhidget => {
-    registeredPhidget.deactivate();
-    registeredPhidget.close();
-  })
-})
-
-// Register the whitelisted phidgets that are passed from the renderer process
-ipcMain.on('register-phidgets', (event, projecten) => {
-
-  //Do something with the phidget API so it can detect if the phidgets are connected to the PC
-
-  console.log(projecten)
-
-  // Register the phidget to variable registeredPhidgets if it has detected it
-  for (project in projecten) {
-    for (phidgetSerialNumber in project['phidget']) {
-      for (phidgetChannel in phidgetSerialNumber) {
-        registeredPhidgets.push(new PhidgetLight(phidgetSerialNumber, phidgetChannel));
-      }
-    }
-  }
-
-  // Return some data to the renderer process with the mainprocess-response ID
-  event.sender.send('register-phidgets-response', registeredPhidgets);
-});
-
+let activatedPhidgets = [];
 
 // Function is getting called from renderer.js
 ipcMain.on('turn-on-lights', (event, data) => {
 
   console.info(data)
+
+  // Since we only want the new lights to be lit, we deactivate the other lights first
+  deactivateLights();
 
   // Looping over the phidget data that is being send by the renderer process
   for (const property in data.phidget) {
@@ -117,14 +92,10 @@ ipcMain.on('turn-on-lights', (event, data) => {
       // Example: 15
       let channel = data.phidget[property][key];
 
-      // Since we only want the new lights to be lit, we deactivate the other lights first
-      deactivateLights();
-
-      // Filter out the PhidgetLight instances that now should be activated by serial and channel
-      registeredPhidgets
-          .filter(value => value.getSerial() === serial && value.getChannel() === channel)
-          // and activate each
-          .forEach(phidgetLight => phidgetLight.activate());
+      // Create a new instance for each serial/channel combination. It automatically activates it at the same time
+      phidgetLight = new PhidgetLight(serial, channel);
+      // And add it to the array of activated lights
+      activatedPhidgets.push(phidgetLight);
     }
   }
 
@@ -135,20 +106,15 @@ ipcMain.on('turn-on-lights', (event, data) => {
 });
 
 ipcMain.on('turn-off-lights', (event, data) => {
-
-  // Finally I want this function to turn off all the active channels.
-  registeredPhidgets
-      .filter(value => value.isActivated())
-      .forEach(phidgetLight => phidgetLight.deactivate());
-
+  deactivateLights();
 });
 
 function deactivateLights() {
-  // Filter out the activated PhidgetLight instances
-  registeredPhidgets
-      .filter(value => value.isActivated())
-      // and deactivate
-      .forEach(phidgetLight => phidgetLight.deactivate());
+  // Deactivate every light
+  activatedPhidgets
+      .forEach(phidgetLight => phidgetLight.close());
+  // Clear the array, because no light is active anymore
+  activatedPhidgets = [];
 }
 
 class PhidgetLight {
@@ -158,22 +124,28 @@ class PhidgetLight {
     this.digitalOutput = new phidget22.DigitalOutput();
     this.digitalOutput.setDeviceSerialNumber(this.serial);
     this.digitalOutput.setChannel(this.channel);
-    this.digitalOutput.open(5000).then(function () {this.open = true;});
     this.activated = false;
-  }
-
-  activate() {
-    if (this.open) {
-      this.digitalOutput.setDutyCycle(1);
-      this.activated = true;
-      return true;
-    }
-    return false;
+    this.open = true;
+    this.digitalOutput
+        .open(5000)
+        .then(function () {
+          this.setDutyCycle(1)
+              .catch(function (err) {
+                console.error("Error during activating:", err);
+              });
+        })
+        .catch(function (err) {
+          console.error("Error during open:", err);
+        });
   }
 
   deactivate() {
     if (this.open) {
-      // this.digitalOutput... whatever you have to do if to deactivate
+      this.digitalOutput
+          .setDutyCycle(0)
+          .catch(function (err) {
+            console.error("Error during deactivating:", err);
+      });
       this.activated = false;
       return true;
     }
@@ -181,7 +153,12 @@ class PhidgetLight {
   }
 
   close() {
-    this.digitalOutput.close();
+    this.digitalOutput
+        .close()
+        .catch(function (err) {
+          console.error("Error during closing:", err);
+    });
+    this.activated = false;
     this.open = false;
     return true;
   }
