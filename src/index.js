@@ -69,90 +69,35 @@ conn.connect().then(function(data) {
 	console.error(`Error during connecting to phidget at ${process.env.PHIDGET_HOST}:${process.env.PHIDGET_PORT}`, err);
 });
 
-var registeredPhidgets = {};
-
-// Register the whitelisted phidgets that are passed from the renderer process
-ipcMain.on('register-phidgets', (event, phidgets) => {
-
-  //Do something with the phidget API so it can detect if the phidgets are connected to the PC
-
-  console.log(phidgets)
-
-  // Register the phidget to variable registeredPhidgets if it has detected it
-
-  // Return some data to the renderer process with the mainprocess-response ID
-  event.sender.send('register-phidgets-response', registeredPhidgets);
-});
-
+let activatedPhidgets = [];
 
 // Function is getting called from renderer.js
 ipcMain.on('turn-on-lights', (event, data) => {
 
   console.info(data)
 
-  var openPromiseList = [];
-
-  var digitalOutputs = [];
+  // Since we only want the new lights to be lit, we deactivate the other lights first
+  deactivateLights();
 
   // Looping over the phidget data that is being send by the renderer process
   for (const property in data.phidget) {
 
     // Getting the serials of the phidget so I know what phidget to control
     // Example: 257037
-    var serial = property;
+    let serial = property;
 
     for (const key in data.phidget[property]) {
 
       // Setting the channels of the specified module by serial
       // Example: 15
-      var channel = data.phidget[property][key];
+      let channel = data.phidget[property][key];
 
-      // Setting the dynamic variable name i want to create so I can interact with the Phidget API
-      // Example: digitalOutput$257037_15
-      var variableName = `digitalOutput$${serial}_${channel}`;
-
-      // Remember which variables were created so I can loop over them later and turn the on/off
-      digitalOutputs.push(variableName)
-
-      // Creating the actual variable name
-      //eval('var ' + variableName + '= new phidget22.DigitalOutput();');
-      eval(`var ${variableName} = new phidget22.DigitalOutput();`);
-
-      // Setting the serials of the module I want to communicate with
-      //eval(variableName + '.setDeviceSerialNumber(serial);');
-      eval(`${variableName}.setDeviceSerialNumber(${serial});`);
-
-      // Setting the channels I want to turn on/off
-      //eval(variableName + '.setChannel(channel);');
-      eval(`${variableName}.setChannel(${channel});`);
-
-      // Pushing the to the openPromiseList which i don't really understand what for purpose it server, also not sure about the open function.
-      openPromiseList.push(eval(variableName).open(5000))
+      // Create a new instance for each serial/channel combination. It automatically activates it at the same time
+      phidgetLight = new PhidgetLight(serial, channel);
+      // And add it to the array of activated lights
+      activatedPhidgets.push(phidgetLight);
     }
   }
-
-
-  Promise.all(openPromiseList).then(function(values) {
-
-    // This is how I currently turn the channels on the phidgets to the 'on' state
-    for (const arrayKey in digitalOutputs) {
-      var digitalOutput = digitalOutputs[arrayKey];
-      eval(digitalOutput + '.setDutyCycle(1);');
-    }
-
-    //Close your Phidgets once the program is done.
-    setTimeout(function () {
-
-      for (const arrayKey in digitalOutputs) {
-        var digitalOutput = digitalOutputs[arrayKey];
-        eval(digitalOutput + '.close();');
-      }
-
-      // Some function that can be used to call the function below
-      // ipcMain.emit('turn-off-lights');
-    }, 5000);
-      
-  });
 
   // Return some data to the renderer process with the mainprocess-response ID
   event.sender.send('mainprocess-response', data);
@@ -161,7 +106,76 @@ ipcMain.on('turn-on-lights', (event, data) => {
 });
 
 ipcMain.on('turn-off-lights', (event, data) => {
-
-  // Finally I want this function to turn off all the active channels.
-
+  deactivateLights();
 });
+
+function deactivateLights() {
+  // Deactivate every light
+  activatedPhidgets
+      .forEach(phidgetLight => phidgetLight.close());
+  // Clear the array, because no light is active anymore
+  activatedPhidgets = [];
+}
+
+class PhidgetLight {
+  constructor(serial, channel) {
+    this.serial = serial;
+    this.channel = channel;
+    this.digitalOutput = new phidget22.DigitalOutput();
+    this.digitalOutput.setDeviceSerialNumber(this.serial);
+    this.digitalOutput.setChannel(this.channel);
+    this.activated = false;
+    this.open = true;
+    this.digitalOutput
+        .open(5000)
+        .then(function () {
+          this.setDutyCycle(1)
+              .catch(function (err) {
+                console.error("Error during activating:", err);
+              });
+        })
+        .catch(function (err) {
+          console.error("Error during open:", err);
+        });
+  }
+
+  deactivate() {
+    if (this.open) {
+      this.digitalOutput
+          .setDutyCycle(0)
+          .catch(function (err) {
+            console.error("Error during deactivating:", err);
+      });
+      this.activated = false;
+      return true;
+    }
+    return false;
+  }
+
+  close() {
+    this.digitalOutput
+        .close()
+        .catch(function (err) {
+          console.error("Error during closing:", err);
+    });
+    this.activated = false;
+    this.open = false;
+    return true;
+  }
+
+  getSerial() {
+    return this.serial;
+  }
+
+  getChannel() {
+    return this.channel;
+  }
+
+  isActivated() {
+    return this.activated;
+  }
+
+  isOpen() {
+    return this.open;
+  }
+}

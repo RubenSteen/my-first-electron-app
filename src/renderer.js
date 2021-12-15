@@ -109,7 +109,7 @@ const { ipcRenderer } = require('electron');
   }
 
 // Call the register phidgets function from the main process
-ipcRenderer.send('register-phidgets', data.allowed_phidgets);
+ipcRenderer.send('register-phidgets', data.projecten);
 
 // Listen for the response from register-phidgets
 ipcRenderer.on('register-phidgets-response', (event, data) => {
