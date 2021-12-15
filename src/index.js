@@ -10,9 +10,15 @@ if (require('electron-squirrel-startup')) { // eslint-disable-line global-requir
 // Creating app window
 const createWindow = () => {
   // Create the browser window.
+  var frame = false
+
+  if (process.env.APP_ENV === 'local') {
+    frame = true
+  }
+
   const mainWindow = new BrowserWindow({
     show: false,
-    //frame: false, // Makes the application fullscreen without close buttons
+    frame: frame, // Makes the application fullscreen without close buttons
     webPreferences: {
       preload: path.join(__dirname, 'preload.js'),
       nodeIntegration: true,
@@ -20,8 +26,15 @@ const createWindow = () => {
     }
   });
 
-  // Hide the menubar
-  //mainWindow.setAutoHideMenuBar(true)
+  if (process.env.APP_ENV === 'local') {
+    // Open the DevTools.
+    mainWindow.webContents.openDevTools();
+  } else {
+    // Hide the menubar
+    mainWindow.setAutoHideMenuBar(true)
+  }
+
+  
 
   // Maximize the window
   mainWindow.maximize()
@@ -29,8 +42,6 @@ const createWindow = () => {
   // and load the index.html of the app.
   mainWindow.loadFile(path.join(__dirname, 'index.html'));
 
-  // Open the DevTools.
-  mainWindow.webContents.openDevTools();
 };
 
 // This method will be called when Electron has finished
@@ -72,19 +83,10 @@ conn.connect().then(function(data) {
 
 let registeredPhidgets = [];
 
-// setTimeout(function ()  {
-//   registeredPhidgets.forEach(registeredPhidget => {
-//     registeredPhidget.deactivate();
-//     registeredPhidget.close();
-//   })
-// })
 
 // Register the whitelisted phidgets that are passed from the renderer process
 ipcMain.on('register-phidgets', (event, projects) => {
 
-  //Do something with the phidget API so it can detect if the phidgets are connected to the PC
-
-  //console.log(projecten)
 
   // Register the phidget to variable registeredPhidgets if it has detected it
   for (projectKey in projects) {
@@ -93,75 +95,35 @@ ipcMain.on('register-phidgets', (event, projects) => {
       for (phidgetChannel in projectPhidget[phidgetSerial]) {
         let channel = projectPhidget[phidgetSerial][phidgetChannel];
 
+
+        // This is still creating duplicates, which bring some errors.
+        /*  
+          name: 'PhidgetError',
+          errorCode: 3,
+          message: 'Open timed out'
+        */
         registeredPhidgets.push(new PhidgetLight(phidgetSerial, channel));
+
+        
       }
     }
-  }
-
-
-  setTimeout(() => {
-    registeredPhidgets
-      // and deactivate
-      .forEach(phidgetLight => phidgetLight.activate());
-  }, 100);
-
-  setTimeout(() => {
-    registeredPhidgets
-      .filter(value => value.isActivated())
-      // and deactivate
-      .forEach(phidgetLight => phidgetLight.deactivate());
-  }, 2000);
-
+  } 
   
-  
-
-
-  //registeredPhidgets.push(new PhidgetLight(phidgetSerialNumber, phidgetChannel));
-
-  // THIS WORKS
-  // var phidget = new PhidgetLight(257037, 15);
-  // setTimeout(() => {   phidget.activate(); }, 15);
-  // setTimeout(() => {   phidget.deactivate(); }, 2000);
- 
-  
-
-  //console.log(registeredPhidgets)
   // Return some data to the renderer process with the mainprocess-response ID
-  //event.sender.send('register-phidgets-response', registeredPhidgets);
+  // event.sender.send('register-phidgets-response', registeredPhidgets);
 });
 
 
 // Function is getting called from renderer.js
 ipcMain.on('turn-on-lights', (event, data) => {
 
-  // Looping over the phidget data that is being send by the renderer process
-  for (const property in data.phidget) {
+  // Since we only want the new lights to be lit, we deactivate the other lights first
+  deactivateLights();
 
-    // Getting the serials of the phidget so I know what phidget to control
-    // Example: 257037
-    let serial = property;
-
-    for (const key in data.phidget[property]) {
-
-      // Setting the channels of the specified module by serial
-      // Example: 15
-      let channel = data.phidget[property][key];
-
-      // Since we only want the new lights to be lit, we deactivate the other lights first
-      deactivateLights();
-
-      // Filter out the PhidgetLight instances that now should be activated by serial and channel
-      registeredPhidgets
-          .filter(value => value.getSerial() === serial && value.getChannel() === channel)
-          // and activate each
-          .forEach(phidgetLight => phidgetLight.activate());
-    }
-  }
+  activateLights(data.phidget);
 
   // Return some data to the renderer process with the mainprocess-response ID
   event.sender.send('mainprocess-response', data);
-
-  console.log("lights turned on.")
 });
 
 ipcMain.on('turn-off-lights', (event, data) => {
@@ -172,6 +134,27 @@ ipcMain.on('turn-off-lights', (event, data) => {
       .forEach(phidgetLight => phidgetLight.deactivate());
 
 });
+
+function activateLights(data) {
+  // Filter out the PhidgetLight instances that now should be activated by serial and channel
+
+  // // Looping over the phidget data that is being send by the renderer process
+  for (const serial in data) {
+
+    for (const key in data[serial]) {
+
+      let channel = data[serial][key];
+
+      registeredPhidgets
+      .filter(value => value.getSerial() === serial && value.getChannel() === channel)
+      // and activate each
+      .forEach(phidgetLight => phidgetLight.activate());
+      
+      
+      
+    }
+  }
+}
 
 function deactivateLights() {
   // Filter out the activated PhidgetLight instances

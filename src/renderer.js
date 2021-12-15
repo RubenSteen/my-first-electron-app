@@ -45,66 +45,66 @@ const { ipcRenderer } = require('electron');
             ],
         },
       },
-    //   3: {
-    //     "titel": "School 7 bibliotheek Den Helder",
-    //     "omschrijving": "Renovatie gemeentelijk monument in combinatie met nieuwbouw. School 7 heeft de Public Library of the Year Award 2018 gewonnen.",
-    //     "architect": "Drost en van Veen te Rotterdam i.s.m. Mars interieur te Rotterdam",
-    //     "ontwikkelaar": "Woningstichting Den Helder i.s.m. Zeestad",
-    //     "aannemer": "aannemingsbedrijf Dozy BV",
-    //     "gebruiker": "Kopgroep bibliotheken Den Helder",
-    //     "planning": "april 2016 opgeleverd",
-    //     "informatie": "www.wsdh.nl en www.kopgroepbibliotheken.nl",
-    //     "plaatjes": {
-    //         "plaatje": "img_2.jpg"
-    //     },
-    //     "phidget": {
-    //         "478550" : [
-    //             0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
-    //         ],
-    //     },
-    //   },
-    //   4: {
-    //     "titel": "School 7 bibliotheek Den Helder",
-    //     "omschrijving": "Renovatie gemeentelijk monument in combinatie met nieuwbouw. School 7 heeft de Public Library of the Year Award 2018 gewonnen.",
-    //     "architect": "Drost en van Veen te Rotterdam i.s.m. Mars interieur te Rotterdam",
-    //     "ontwikkelaar": "Woningstichting Den Helder i.s.m. Zeestad",
-    //     "aannemer": "aannemingsbedrijf Dozy BV",
-    //     "gebruiker": "Kopgroep bibliotheken Den Helder",
-    //     "planning": "april 2016 opgeleverd",
-    //     "informatie": "www.wsdh.nl en www.kopgroepbibliotheken.nl",
-    //     "plaatjes": {
-    //         "plaatje": "img_2.jpg"
-    //     },
-    //     "phidget": {
-    //         "257037" : [
-    //             0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
-    //         ],
-    //     },
-    //   },
-    //   5: {
-    //     "titel": "School 7 bibliotheek Den Helder",
-    //     "omschrijving": "Renovatie gemeentelijk monument in combinatie met nieuwbouw. School 7 heeft de Public Library of the Year Award 2018 gewonnen.",
-    //     "architect": "Drost en van Veen te Rotterdam i.s.m. Mars interieur te Rotterdam",
-    //     "ontwikkelaar": "Woningstichting Den Helder i.s.m. Zeestad",
-    //     "aannemer": "aannemingsbedrijf Dozy BV",
-    //     "gebruiker": "Kopgroep bibliotheken Den Helder",
-    //     "planning": "april 2016 opgeleverd",
-    //     "informatie": "www.wsdh.nl en www.kopgroepbibliotheken.nl",
-    //     "plaatjes": {
-    //         "plaatje": "img_2.jpg"
-    //     },
-    //     "phidget": {
-    //         "312483" : [
-    //             0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
-    //         ],
-    //         "478550" : [
-    //             0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
-    //         ],
-    //         "257037" : [
-    //             0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
-    //         ],
-    //     },
-    //   },
+      3: {
+        "titel": "School 7 bibliotheek Den Helder",
+        "omschrijving": "Renovatie gemeentelijk monument in combinatie met nieuwbouw. School 7 heeft de Public Library of the Year Award 2018 gewonnen.",
+        "architect": "Drost en van Veen te Rotterdam i.s.m. Mars interieur te Rotterdam",
+        "ontwikkelaar": "Woningstichting Den Helder i.s.m. Zeestad",
+        "aannemer": "aannemingsbedrijf Dozy BV",
+        "gebruiker": "Kopgroep bibliotheken Den Helder",
+        "planning": "april 2016 opgeleverd",
+        "informatie": "www.wsdh.nl en www.kopgroepbibliotheken.nl",
+        "plaatjes": {
+            "plaatje": "img_2.jpg"
+        },
+        "phidget": {
+            "478550" : [
+                0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+            ],
+        },
+      },
+      4: {
+        "titel": "School 7 bibliotheek Den Helder",
+        "omschrijving": "Renovatie gemeentelijk monument in combinatie met nieuwbouw. School 7 heeft de Public Library of the Year Award 2018 gewonnen.",
+        "architect": "Drost en van Veen te Rotterdam i.s.m. Mars interieur te Rotterdam",
+        "ontwikkelaar": "Woningstichting Den Helder i.s.m. Zeestad",
+        "aannemer": "aannemingsbedrijf Dozy BV",
+        "gebruiker": "Kopgroep bibliotheken Den Helder",
+        "planning": "april 2016 opgeleverd",
+        "informatie": "www.wsdh.nl en www.kopgroepbibliotheken.nl",
+        "plaatjes": {
+            "plaatje": "img_2.jpg"
+        },
+        "phidget": {
+            "257037" : [
+                0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+            ],
+        },
+      },
+      5: {
+        "titel": "School 7 bibliotheek Den Helder",
+        "omschrijving": "Renovatie gemeentelijk monument in combinatie met nieuwbouw. School 7 heeft de Public Library of the Year Award 2018 gewonnen.",
+        "architect": "Drost en van Veen te Rotterdam i.s.m. Mars interieur te Rotterdam",
+        "ontwikkelaar": "Woningstichting Den Helder i.s.m. Zeestad",
+        "aannemer": "aannemingsbedrijf Dozy BV",
+        "gebruiker": "Kopgroep bibliotheken Den Helder",
+        "planning": "april 2016 opgeleverd",
+        "informatie": "www.wsdh.nl en www.kopgroepbibliotheken.nl",
+        "plaatjes": {
+            "plaatje": "img_2.jpg"
+        },
+        "phidget": {
+            "312483" : [
+                0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+            ],
+            "478550" : [
+                0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+            ],
+            "257037" : [
+                0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
+            ],
+        },
+      },
     }
   }
 
@@ -116,6 +116,9 @@ ipcRenderer.on('register-phidgets-response', (event, data) => {
     console.log(data);
 });
 
+ipcRenderer.on('error-response', (event, error) => {
+    console.log(error);
+});
 
 
 
