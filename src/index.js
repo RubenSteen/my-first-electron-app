@@ -54,31 +54,29 @@ app.on('activate', () => {
 var phidget22 = require('phidget22');
 
 // Create connection to Phidget
-var conn = new phidget22.Connection(parseInt(process.env.PHIDGET_PORT), process.env.PHIDGET_HOST);
-conn.connect().then(function(data) {
-  console.log(`Phidget connection succesfull at ${process.env.PHIDGET_HOST}:${process.env.PHIDGET_PORT}`);
-}).catch(function (err) {
-	console.error(`Error during connecting to phidget at ${process.env.PHIDGET_HOST}:${process.env.PHIDGET_PORT}`, err);
-});
+var conn = new phidget22.Connection(5661, 'localhost');
+conn.connect().then(runExample)
 
- //Create your Phidget channels
- var digitalOutput15 = new phidget22.DigitalOutput();
+function runExample() {
+	//Create your Phidget channels
+	var digitalOutput15 = new phidget22.DigitalOutput();
 
- //Set addressing parameters to specify which channel to open (if any)
- digitalOutput15.setDeviceSerialNumber(312483);
- digitalOutput15.setChannel(15);
+	//Set addressing parameters to specify which channel to open (if any)
+	digitalOutput15.setDeviceSerialNumber(312483);
+	digitalOutput15.setChannel(15);
 
- //Assign any event handlers you need before calling open so that no events are missed.
+	//Assign any event handlers you need before calling open so that no events are missed.
 
- //Open your Phidgets and wait for attachment
- digitalOutput15.open(5000).then(function() {
+	//Open your Phidgets and wait for attachment
+	digitalOutput15.open(5000).then(function() {
 
-   //Do stuff with your Phidgets here or in your event handlers.
-   digitalOutput15.setDutyCycle(1);
+		//Do stuff with your Phidgets here or in your event handlers.
+		digitalOutput15.setDutyCycle(1);
 
-   setTimeout(function () {
-     //Close your Phidgets once the program is done.
-     digitalOutput15.close();
-     process.exit(0);
-   }, 5000);
- });
+		setTimeout(function () {
+			//Close your Phidgets once the program is done.
+			digitalOutput15.close();
+			process.exit(0);
+		}, 5000);
+	});
+}
