@@ -1,5 +1,6 @@
 const { app, BrowserWindow, ipcMain } = require('electron');
 const path = require('path');
+const fs = require('fs');
 require('dotenv').config({ path: '.env' })
 
 // Handle creating/removing shortcuts on Windows when installing/uninstalling.
@@ -7,13 +8,17 @@ if (require('electron-squirrel-startup')) { // eslint-disable-line global-requir
   app.quit();
 }
 
+let projects = JSON.parse(fs.readFileSync(path.join(__dirname, 'projects.json')));
+
 // Creating app window
 const createWindow = () => {
 
   const mainWindow = new BrowserWindow({
+    width: 2401,
+    height: 1140,
     webPreferences: {
-      // nodeIntegration: true,
-      // contextIsolation: false,
+      nodeIntegration: true,
+      contextIsolation: false,
     }
   });
 
@@ -46,7 +51,99 @@ app.on('activate', () => {
   }
 });
 
+class PhidgetLight {
+  constructor(serial, channel) {
+    this.serial = serial;
+    this.channel = channel;
+    this.digitalOutput = new phidget22.DigitalOutput();
+    this.digitalOutput.setDeviceSerialNumber(this.serial);
+    this.digitalOutput.setChannel(this.channel);
+    this.digitalOutput.open(5000).catch(function (err) {
+      console.error("Error during open:", err);
+    });
+    this.open = true;
+    this.activated = false;
+  }
 
+  activate() {
+    if (this.open) {
+      this.digitalOutput.setDutyCycle(1).catch(function (err) {
+        console.error("Error during open:", err);
+      });
+      this.activated = true;
+      return true;
+    }
+    return false;
+  }
+
+  deactivate() {
+    if (this.open) {
+      this.digitalOutput.setDutyCycle(0).catch(function (err) {
+        console.error("Error during open:", err);
+      });
+      this.activated = false;
+      return true;
+    }
+    return false;
+  }
+
+  close() {
+    this.digitalOutput.close();
+    this.open = false;
+    return true;
+  }
+
+  getSerial() {
+    return this.serial;
+  }
+
+  getChannel() {
+    return this.channel;
+  }
+
+  isActivated() {
+    return this.activated;
+  }
+
+  isOpen() {
+    return this.open;
+  }
+}
+
+function deactivateLights() {
+  // Filter out the activated PhidgetLight instances
+  registeredPhidgets
+      .filter(value => value.isActivated())
+      // and deactivate
+      .forEach(phidgetLight => phidgetLight.deactivate());
+}
+
+function activateLights(data) {
+  // Filter out the PhidgetLight instances that now should be activated by serial and channel
+
+  // // Looping over the phidget data that is being send by the renderer process
+  for (const serial in data) {
+
+    for (const key in data[serial]) {
+
+      let channel = data[serial][key];
+
+      registeredPhidgets
+      .filter(value => value.getSerial() === serial && value.getChannel() === channel)
+      // and activate each
+      .forEach(phidgetLight => phidgetLight.activate());
+      
+    }
+  }
+}
+
+function psuedo(data) {
+  deactivateLights();
+
+  activateLights(data);
+}
+
+let registeredPhidgets = [];
 
 // Require phidget (https://www.phidgets.com/)
 // Using the module : https://www.phidgets.com/?tier=3&catid=2&pcid=1&prodid=1019 (1202_2 - PhidgetInterfaceKit 0/16/16)
@@ -55,28 +152,37 @@ var phidget22 = require('phidget22');
 
 // Create connection to Phidget
 var conn = new phidget22.Connection(5661, 'localhost');
-conn.connect().then(runExample)
+conn.connect().then(initializePhidgets(projects))
 
-function runExample() {
-	//Create your Phidget channels
-	var digitalOutput15 = new phidget22.DigitalOutput();
+function initializePhidgets(projects) {
 
-	//Set addressing parameters to specify which channel to open (if any)
-	digitalOutput15.setDeviceSerialNumber(312483);
-	digitalOutput15.setChannel(15);
+  for (projectKey in projects) {
+    projectPhidget = projects[projectKey]['phidget'];
+    for (phidgetSerial in projectPhidget) {
+      for (phidgetChannel in projectPhidget[phidgetSerial]) {
+        let channel = projectPhidget[phidgetSerial][phidgetChannel];
 
-	//Assign any event handlers you need before calling open so that no events are missed.
 
-	//Open your Phidgets and wait for attachment
-	digitalOutput15.open(5000).then(function() {
+        // This is still creating duplicates, which bring some errors.
+        /*  
+          name: 'PhidgetError',
+          errorCode: 3,
+          message: 'Open timed out'
+        */
+        registeredPhidgets.push(new PhidgetLight(phidgetSerial, channel));
 
-		//Do stuff with your Phidgets here or in your event handlers.
-		digitalOutput15.setDutyCycle(1);
-
-		setTimeout(function () {
-			//Close your Phidgets once the program is done.
-			digitalOutput15.close();
-			process.exit(0);
-		}, 5000);
-	});
+        
+      }
+    }
+  }
+  
 }
+
+// Function is getting called from renderer.js
+ipcMain.on('turn-on-lights', (event, data) => {
+
+  // Since we only want the new lights to be lit, we deactivate the other lights first
+  deactivateLights();
+
+  activateLights(data);
+});

@@ -6,14 +6,35 @@
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <meta http-equiv="X-Content-Security-Policy" content="default-src 'self'; script-src 'self'">
     <title>Hello World!</title>
+    <style>
+      #backing {
+        vertical-align: middle;
+        margin: 0;
+        overflow: hidden;
+      }
+      #backing svg { 
+        display: inline-block;
+        position: absolute;
+        top: 0; left: 0;
+      }
+      .clickable {
+        cursor: pointer;
+      }
+    </style>
   </head>
   <body>
-    <h1>Projects</h1>
-    <button id="button1" data-project="1" type="button">Simpele test</button>
-    <button id="button2" data-project="2" type="button">Phidget A</button>
-    <button id="button3" data-project="3" type="button">Phidget B</button>
-    <button id="button4" data-project="4" type="button">Phidget C</button>
-    <button id="button5" data-project="5" type="button">Alle Phidgets</button>
+    <figure id='backing'>
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 1080" preserveAspectRatio="xMinYMin meet" >
+        <image width="1920" height="1080" xlink:href="storage/images/maquette_kaal.jpg" />
+        <polygon class="clickable" data-project="1" points="163,587 214,492 267,473 335,483 377,603 327,631 249,658 211,641" fill="#ddd" opacity="1.0"/>
+
+        <polygon class="clickable" data-project="2" points="863,887 414,892 267,673 335,483 377,603 327,631 249,658 211,641" fill="#aaa" opacity="1.0"/>
+      </svg>
+    </figure>
+
+    <!-- <svg id="button1" class="clickable" data-project="1" width="100" height="100">
+      <circle cx="50" cy="50" r="40" stroke="green" stroke-width="4" fill="yellow" />
+    </svg> -->
 
     <script src="./renderer.js"></script>
   </body>
