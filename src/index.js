@@ -16,11 +16,19 @@ const createWindow = () => {
   const mainWindow = new BrowserWindow({
     width: 2401,
     height: 1140,
+    //show: false,
+    //frame: false,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
     }
   });
+
+  // Hide the menubar
+  //mainWindow.setAutoHideMenuBar(true)
+
+  // Maximize the window
+  //mainWindow.maximize()
 
   mainWindow.webContents.openDevTools();
 
@@ -112,10 +120,12 @@ class PhidgetLight {
 
 function deactivateLights() {
   // Filter out the activated PhidgetLight instances
-  registeredPhidgets
+
+    registeredPhidgets
       .filter(value => value.isActivated())
       // and deactivate
       .forEach(phidgetLight => phidgetLight.deactivate());
+  
 }
 
 function activateLights(data) {
@@ -129,18 +139,11 @@ function activateLights(data) {
       let channel = data[serial][key];
 
       registeredPhidgets
-      .filter(value => value.getSerial() === serial && value.getChannel() === channel)
-      // and activate each
-      .forEach(phidgetLight => phidgetLight.activate());
-      
+        .filter(value => value.getSerial() === serial && value.getChannel() === channel)
+        // and activate each
+        .forEach(phidgetLight => phidgetLight.activate());
     }
   }
-}
-
-function psuedo(data) {
-  deactivateLights();
-
-  activateLights(data);
 }
 
 let registeredPhidgets = [];
@@ -162,15 +165,10 @@ function initializePhidgets(projects) {
       for (phidgetChannel in projectPhidget[phidgetSerial]) {
         let channel = projectPhidget[phidgetSerial][phidgetChannel];
 
-
-        // This is still creating duplicates, which bring some errors.
-        /*  
-          name: 'PhidgetError',
-          errorCode: 3,
-          message: 'Open timed out'
-        */
-        registeredPhidgets.push(new PhidgetLight(phidgetSerial, channel));
-
+        // If the phidget channel has not been registered before for that phidgetSerial then attach to it.
+        if (registeredPhidgets.filter(value => value.getSerial() == phidgetSerial && value.getChannel() == channel).length === 0) {
+          registeredPhidgets.push(new PhidgetLight(phidgetSerial, channel));
+        }
         
       }
     }
