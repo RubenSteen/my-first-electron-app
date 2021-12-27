@@ -3,6 +3,7 @@
   <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
   <div id="left" class="">
     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Distinctio culpa deleniti ullam harum minima temporibus non reiciendis earum, sequi ipsa rerum deserunt quae eius placeat unde cumque voluptatum rem delectus.
+    <p v-bind="selectedProject"></p>
   </div>
   <div id="right" class="">
     <div id="slider">
@@ -22,6 +23,7 @@
 
 export default {
   name: 'App',
+
   components: {
     // HelloWorld
   }
