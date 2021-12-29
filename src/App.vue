@@ -8,8 +8,70 @@
     
       <img src="./assets/images/maquette_kaal.jpg">
       <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 966 1070">
-        <rect @click="openProject(1)" :class="(show == 1)?'active':''" class="clickable" x="704" y="258" width="56" height="64" opacity="1" />
-        <polygon @click="openProject(2)" :class="(show == 2)?'active':''" class="clickable" points="766 265 818 265 818 300 796 300 796 311 766 311" />
+        <!-- Polygon points are ALWAYS x then y
+        Example :
+        556 900 576 898
+        The x556 draws to y900 and then draws x576 to y898 -->
+
+        <!-- Molenplein fase 2 -->
+        <rect @click="openProject(11)" :class="(show == 11)?'active':''" class="clickable" x="618" y="305" width="27" height="90" opacity="1" />
+
+        <!-- Molenplein fase 1 -->
+        <rect @click="openProject(10)" :class="(show == 10)?'active':''" class="clickable" x="618" y="400" width="27" height="105" opacity="1" />
+
+        <!-- School 7 bibliotheek Den Helder -->
+        <polygon @click="openProject(2)" :class="(show == 2)?'active':''" class="clickable" points="616 845 618 885 640 880 640 845" />
+
+        <!-- Keizersbrug -->
+        <polygon @click="openProject(1)" :class="(show == 1)?'active':''" class="clickable" points="624 904 660 904 660 917 655 917 655 925 645 925 632 915" />
+
+        <!-- De Kamerheer -->
+        <polygon @click="openProject(16)" :class="(show == 16)?'active':''" class="clickable" points="556 900 576 896 589 896 589 924 558 924" />
+
+        <!-- Kop Beatrixstraat -->
+        <polygon @click="openProject(3)" :class="(show == 3)?'active':''" class="clickable" points="558 856 582 856 582 884 558 890" />
+
+        <!-- De Hoed -->
+        <polygon @click="openProject(2)" :class="(show == 2)?'active':''" class="clickable" points="558 808 558 775 581 775 581 797 570 797 570 808" />
+
+        <!-- Boedel Staete -->
+        <polygon @click="openProject(2)" :class="(show == 2)?'active':''" class="clickable" points="558 706 581 706 581 720 558 720" />
+
+        <!-- De Melkfabriek -->
+        <polygon @click="openProject(2)" :class="(show == 2)?'active':''" class="clickable" points="558 636 583 636 583 662 558 662" />
+
+        <!-- De Hofdame -->
+        <polygon @click="openProject(2)" :class="(show == 2)?'active':''" class="clickable" points="476 917 538 909 540 932 478 941" />
+
+        <!-- Gevels Beatrixstraat -->
+        <polygon @click="openProject(2)" :class="(show == 2)?'active':''" class="clickable" points="499 868 512 872 512 868 531 867 531 855 551 855 551 887 504 893" />
+
+        <!-- De Werviaan -->
+        <polygon @click="openProject(2)" :class="(show == 2)?'active':''" class="clickable" points="538 722 552 722 552 777 538 777 528 768 540 753 491 707 449 751 440 740 495 682" />
+
+        <!-- Zoetelief -->
+        <polygon @click="openProject(2)" :class="(show == 2)?'active':''" class="clickable" points="445 895 445 901 413 903 413 890 416 890 415 887 409 882 421 869" />
+
+        <!-- Casino Flamingo Beatrixstraat -->
+        <polygon @click="openProject(1)" :class="(show == 1)?'active':''" class="clickable" points="391 907 389 889 402 877 408 884 410 905" />
+
+        <!-- V&D -->
+        <polygon @click="openProject(2)" :class="(show == 2)?'active':''" class="clickable" points="307 917 383 909 382 894 372 883 304 890" />
+        <rect @click="openProject(2)" :class="(show == 2)?'active':''" x="363" y="910" width="10" height="10" rx="15" />
+
+        <!-- Hotel Wienerhof -->
+        <polygon @click="openProject(2)" :class="(show == 2)?'active':''" class="clickable" points="309 966 306 938 330 936 332 965" />
+
+        <!-- Ontwikkeling Stadsgebied -->
+        <!-- <polygon @click="openProject(2)" :class="(show == 2)?'active':''" class="clickable" points="243 1003 239 984 255 973 274 977 276 970 275 964 270 958 268 956" /> -->
+
+        <!-- De Vijfsprong -->
+        <!-- <polygon @click="openProject(2)" :class="(show == 2)?'active':''" class="clickable" points="70 1010 54 1026" /> -->
+
+        <!-- Watertoren -->
+        <rect @click="openProject(2)" :class="(show == 2)?'active':''" x="154" y="942" width="13" height="13" rx="15" />
+
+
       </svg>
     
     </div>
@@ -46,6 +108,7 @@
 
 <script>
 // import HelloWorld from './components/HelloWorld.vue'
+import projectJson from './assets/projects.json'
 
 export default {
   name: 'App',
@@ -56,145 +119,87 @@ export default {
 
   data() {
     return {
-      show: 1,
+      show: null,
       loading: false,
-      projects: {
-        "1": {
-          "titel": "Keizersbrug",
-          "subtitel": "7 markante herenhuizen",
-          "omschrijving": "Woningstichting realiseerde 11 appartementen en 1 bedrijfsruimte op de begane grond.",
-          "bullets": {
-            "architect": "Kapitein Jacobs Kapitein te Den Helder",
-            "ontwikkelaar": "Woningstichting Den Helder",
-            "aannemer": "aannemingsbedrijf Dozy BV",
-            "gebruiker": "n.v.t",
-            "planning": "juni 2014 opgeleverd",
-            "informatie": "Neem voor meer informatie contact op met Woningstichting Den Helder (0223 677677) of bekijk de website www.wsdh.nl ",
-          },
-          "plaatjes": {
-            "plaatje": "img_2.jpg"
-          },
-          "phidget": {
-              "312483": [
-                  15,
-                  6
-              ]
-          }
-        },
-      "2": {
-          "titel": "School 7 bibliotheek Den Helder",
-          "omschrijving": "Renovatie gemeentelijk monument in combinatie met nieuwbouw. School 7 heeft de Public Library of the Year Award 2018 gewonnen.",
-          "bullets": {
-            "architect": "Drost en van Veen te Rotterdam i.s.m. Mars interieur te Rotterdam",
-            "ontwikkelaar": "Woningstichting Den Helder i.s.m. Zeestad",
-            "aannemer": "aannemingsbedrijf Dozy BV",
-            "gebruiker": "Kopgroep bibliotheken Den Helder",
-            "planning": "april 2016 opgeleverd",
-            "informatie": "www.wsdh.nl en www.kopgroepbibliotheken.nl",
-          },
-          "plaatjes": {
-              "plaatje": "img_3.jpg"
-          },
-          "phidget": {
-              "312483" : [
-                  0
-              ]
-          }
-        },
-        "3": {
-          "titel": "School 7 bibliotheek Den Helder",
-          "omschrijving": "Renovatie gemeentelijk monument in combinatie met nieuwbouw. School 7 heeft de Public Library of the Year Award 2018 gewonnen.",
-          "bullets": {
-            "architect": "Drost en van Veen te Rotterdam i.s.m. Mars interieur te Rotterdam",
-            "ontwikkelaar": "Woningstichting Den Helder i.s.m. Zeestad",
-            "aannemer": "aannemingsbedrijf Dozy BV",
-            "gebruiker": "Kopgroep bibliotheken Den Helder",
-            "planning": "april 2016 opgeleverd",
-            "informatie": "www.wsdh.nl en www.kopgroepbibliotheken.nl",
-          },
-          "plaatjes": {
-              "plaatje": "img_5.jpg"
-          },
-          "phidget": {
-              "478550" : [
-                  0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
-              ]
-          }
-        },
-        "4": {
-          "titel": "School 7 bibliotheek Den Helder",
-          "omschrijving": "Renovatie gemeentelijk monument in combinatie met nieuwbouw. School 7 heeft de Public Library of the Year Award 2018 gewonnen.",
-          "bullets": {
-            "architect": "Drost en van Veen te Rotterdam i.s.m. Mars interieur te Rotterdam",
-            "ontwikkelaar": "Woningstichting Den Helder i.s.m. Zeestad",
-            "aannemer": "aannemingsbedrijf Dozy BV",
-            "gebruiker": "Kopgroep bibliotheken Den Helder",
-            "planning": "april 2016 opgeleverd",
-            "informatie": "www.wsdh.nl en www.kopgroepbibliotheken.nl",
-          },
-          "plaatjes": {
-              "plaatje": "img_9.jpg"
-          },
-          "phidget": {
-              "257037" : [
-                  0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
-              ]
-          }
-        },
-        "5": {
-          "titel": "School 7 bibliotheek Den Helder",
-          "omschrijving": "Renovatie gemeentelijk monument in combinatie met nieuwbouw. School 7 heeft de Public Library of the Year Award 2018 gewonnen.",
-          "bullets": {
-            "architect": "Drost en van Veen te Rotterdam i.s.m. Mars interieur te Rotterdam",
-            "ontwikkelaar": "Woningstichting Den Helder i.s.m. Zeestad",
-            "aannemer": "aannemingsbedrijf Dozy BV",
-            "gebruiker": "Kopgroep bibliotheken Den Helder",
-            "planning": "april 2016 opgeleverd",
-            "informatie": "www.wsdh.nl en www.kopgroepbibliotheken.nl",
-          },
-          "plaatjes": {
-              "plaatje": "img_12.jpg"
-          },
-          "phidget": {
-              "312483" : [
-                  0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
-              ],
-              "478550" : [
-                  0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
-              ],
-              "257037" : [
-                  0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15
-              ]
-          }
-        }
-      }
+      testRunning: false,
+      keepOpen: 60, // In seconds
+      openedAt: null,
+      projects: projectJson
     }
   },
 
   methods: {
     openProject(project) {
-      if (project != this.show && this.loading == false) {
-        this.loading = true
+      let phidgets = this.projects[project]['phidget'];
 
-        if (this.show !== null) {
-          this.closeCurrentProject()
-          setTimeout(() => this.show = project, 1000);
-          setTimeout(() => this.loading = false, 2000);
-        } else {
-          this.show = project
-          setTimeout(() => this.loading = false, 1000);
+      if (this.show == project) {
+        this.closeCurrentProject()
+      } else {
+        if (project != this.show && this.loading == false) {
+          this.loading = true
+
+          if (this.show !== null) {
+            this.closeCurrentProject()
+            setTimeout(() => {
+              this.show = project
+              this.setOpenedAt()
+              window.ipcRenderer.send('turn-on-lights', JSON.parse(JSON.stringify(phidgets)))
+            }, 1000);
+            setTimeout(() => this.loading = false, 2000);
+          } else {
+            this.show = project
+            this.setOpenedAt()
+            window.ipcRenderer.send('turn-on-lights', JSON.parse(JSON.stringify(phidgets)))
+            setTimeout(() => this.loading = false, 1000);
+          }
         }
       }
     },
+
     closeCurrentProject() {
       this.show = null
+      this.openedAt = null
+      window.ipcRenderer.send('turn-off-lights')
+    },
+
+    setOpenedAt() {
+      this.openedAt = Math.floor(Date.now() / 1000);
+    },
+
+    keepAlive() {
+      if (this.show !== null) {
+        if (this.loading == false) {
+          if (this.openedAt != null) {
+            this.setOpenedAt()
+          }
+        }
+      }
     }
   },
 
   mounted() {
     this.$nextTick(function () {
-      console.log('Application mounted and ready')
+      window.setInterval(() => {
+        if (this.show !== null) {
+          if (this.loading == false) {
+            if (this.openedAt != null) {
+              let closeAt = (this.openedAt + this.keepOpen);
+              if (Math.floor(Date.now() / 1000) >= closeAt) {
+                this.closeCurrentProject()
+              }
+            }
+          }
+        }
+      },2000);
     })
+
+    document.addEventListener('click', this.keepAlive)
+
+    window.addEventListener("keypress", e => {
+      if(String.fromCharCode(e.keyCode) == 't') {
+        console.log('run some test')
+      }
+    });
   }
 }
 </script>

@@ -1,26 +1,42 @@
 'use strict'
 
-import { app, protocol, BrowserWindow } from 'electron'
+import { app, protocol, BrowserWindow, ipcMain } from 'electron'
 import { createProtocol } from 'vue-cli-plugin-electron-builder/lib'
 import installExtension, { VUEJS3_DEVTOOLS } from 'electron-devtools-installer'
 const isDevelopment = process.env.NODE_ENV !== 'production'
+const path = require('path');
+const fs = require('fs');
+const projectsJson = require("./assets/projects.json")
 
 // Scheme must be registered before the app is ready
 protocol.registerSchemesAsPrivileged([
   { scheme: 'app', privileges: { secure: true, standard: true } }
 ])
 
+//let projects = JSON.parse(fs.readFileSync(projectsJson));
+let projects = projectsJson;
+
 async function createWindow() {
   // Create the browser window.
+
+  if (!isDevelopment) {
+    var frame = false;
+  } else {
+    var frame = true;
+  }
+
   const win = new BrowserWindow({
     width: 2492,
     height: 1139,
+    frame: frame,
     webPreferences: {
       
       // Use pluginOptions.nodeIntegration, leave this alone
       // See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration for more info
       nodeIntegration: process.env.ELECTRON_NODE_INTEGRATION,
-      contextIsolation: !process.env.ELECTRON_NODE_INTEGRATION
+      contextIsolation: !process.env.ELECTRON_NODE_INTEGRATION,
+      enableRemoteModule: true,
+      preload: path.join(__dirname, 'preload.js')
     }
   })
 
@@ -30,6 +46,10 @@ async function createWindow() {
 
     // Maximize the window
     win.maximize()
+
+    win.setAlwaysOnTop(true, 'screen');
+
+    win.resizable = false;
   }
 
   if (process.env.WEBPACK_DEV_SERVER_URL) {
@@ -87,3 +107,150 @@ if (isDevelopment) {
     })
   }
 }
+
+class PhidgetLight {
+  constructor(serial, channel) {
+    this.serial = serial;
+    this.channel = channel;
+    this.digitalOutput = new phidget22.DigitalOutput();
+    this.digitalOutput.setDeviceSerialNumber(this.serial);
+    this.digitalOutput.setChannel(this.channel);
+    this.digitalOutput.open(5000).catch(function (err) {
+      console.error("Error during open:", err);
+    });
+    this.open = true;
+    this.activated = false;
+  }
+
+  activate() {
+    if (this.open) {
+      this.digitalOutput.setDutyCycle(1).catch(function (err) {
+        console.error("Error during open:", err);
+      });
+      this.activated = true;
+      return true;
+    }
+    return false;
+  }
+
+  deactivate() {
+    if (this.open) {
+      this.digitalOutput.setDutyCycle(0).catch(function (err) {
+        console.error("Error during open:", err);
+      });
+      this.activated = false;
+      return true;
+    }
+    return false;
+  }
+
+  close() {
+    this.digitalOutput.close();
+    this.open = false;
+    return true;
+  }
+
+  getSerial() {
+    return this.serial;
+  }
+
+  getChannel() {
+    return this.channel;
+  }
+
+  isActivated() {
+    return this.activated;
+  }
+
+  isOpen() {
+    return this.open;
+  }
+}
+
+function deactivateLights() {
+  // Filter out the activated PhidgetLight instances
+
+    registeredPhidgets
+      .filter(value => value.isActivated())
+      // and deactivate
+      .forEach(phidgetLight => phidgetLight.deactivate());
+  
+}
+
+function activateLights(data) {
+  // Filter out the PhidgetLight instances that now should be activated by serial and channel
+
+  // // Looping over the phidget data that is being send by the renderer process
+  for (const serial in data) {
+
+    for (const key in data[serial]) {
+
+      let channel = data[serial][key];
+
+      registeredPhidgets
+        .filter(value => value.getSerial() === serial && value.getChannel() === channel)
+        // and activate each
+        .forEach(phidgetLight => phidgetLight.activate());
+    }
+  }
+}
+
+let registeredPhidgets = [];
+
+// Require phidget (https://www.phidgets.com/)
+// Using the module : https://www.phidgets.com/?tier=3&catid=2&pcid=1&prodid=1019 (1202_2 - PhidgetInterfaceKit 0/16/16)
+// Code example : https://www.phidgets.com/?tier=3&catid=2&pcid=1&prodid=1019
+var phidget22 = require('phidget22');
+
+// Create connection to Phidget
+//var conn = new phidget22.Connection(5661, 'localhost');
+//conn.connect().then(initializePhidgets(projects))
+
+var conn = new phidget22.Connection({
+	hostname: "localhost",
+	port: 5661,
+	name: "Phidget Server Connection",
+	passwd: "",
+	onAuthenticationNeeded: function() { return "password"; },
+	onError: function(code, msg) { console.error("Connection Error:", msg); },
+	onConnect: function() { console.log("Connected"); },
+	onDisconnect: function() { console.log("Disconnected"); }
+});
+
+conn.connect().catch(function(err) {
+	console.error("Error during connecting to phidget:", err);
+}).then(initializePhidgets(projects));
+
+async function initializePhidgets(projects) {
+
+  for (var projectKey in projects) {
+    var projectPhidget = projects[projectKey]['phidget'];
+
+    for (var phidgetSerial in projectPhidget) {
+
+      for (var phidgetChannel in projectPhidget[phidgetSerial]) {
+        let channel = projectPhidget[phidgetSerial][phidgetChannel];
+
+        setTimeout(function() {
+          if (registeredPhidgets.filter(value => value.getSerial() == phidgetSerial && value.getChannel() == channel).length === 0) {
+            registeredPhidgets.push(new PhidgetLight(phidgetSerial, channel));
+          }
+        }, 150)
+        
+      }
+
+    }
+  }
+}
+
+// Function is getting called from renderer.js
+ipcMain.on('turn-on-lights', (event, data) => {
+  // Since we only want the new lights to be lit, we deactivate the other lights first
+  deactivateLights();
+
+  activateLights(data);
+});
+
+ipcMain.on('turn-off-lights', (event, data) => {
+  deactivateLights();
+});
