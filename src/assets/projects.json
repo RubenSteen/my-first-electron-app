@@ -1,344 +1,607 @@
 {
-    "1": {
-        "titel": "Keizersbrug",
-        "subtitel": "7 markante herenhuizen",
-        "omschrijving": "Woningstichting realiseerde 11 appartementen en 1 bedrijfsruimte op de begane grond.",
-        "bullets": {
-          "architect": "Kapitein Jacobs Kapitein te Den Helder",
-          "ontwikkelaar": "Woningstichting Den Helder",
-          "aannemer": "aannemingsbedrijf Dozy BV",
-          "gebruiker": "n.v.t",
-          "planning": "juni 2014 opgeleverd",
-          "informatie": "Neem voor meer informatie contact op met Woningstichting Den Helder (0223 677677) of bekijk de website www.wsdh.nl "
-        },
-        "plaatjes": {
-          "plaatje": "img_2.jpg"
-        },
-        "phidget": {
-            "312483": [
-                15,
-                6
-            ]
-        }
-      },
-    "2": {
-        "titel": "School 7 bibliotheek Den Helder",
-        "omschrijving": "Renovatie gemeentelijk monument in combinatie met nieuwbouw. School 7 heeft de Public Library of the Year Award 2018 gewonnen.",
-        "bullets": {
-          "architect": "Drost en van Veen te Rotterdam i.s.m. Mars interieur te Rotterdam",
-          "ontwikkelaar": "Woningstichting Den Helder i.s.m. Zeestad",
-          "aannemer": "aannemingsbedrijf Dozy BV",
-          "gebruiker": "Kopgroep bibliotheken Den Helder",
-          "planning": "april 2016 opgeleverd",
-          "informatie": "www.wsdh.nl en www.kopgroepbibliotheken.nl"
-        },
-        "plaatjes": {
-            "plaatje": "img_3.jpg"
-        },
-        "phidget": {
-            "312483" : [
-                0
-            ]
-        }
-      },
-      "3": {
-        "titel": "Kop Beatrixstraat",
-        "omschrijving": "Renovatie gemeentelijk monument in combinatie met nieuwbouw. School 7 heeft de Public Library of the Year Award 2018 gewonnen.",
-        "bullets": {
-          "architect": "Drost en van Veen te Rotterdam i.s.m. Mars interieur te Rotterdam",
-          "ontwikkelaar": "Woningstichting Den Helder i.s.m. Zeestad",
-          "aannemer": "aannemingsbedrijf Dozy BV",
-          "gebruiker": "Kopgroep bibliotheken Den Helder",
-          "planning": "april 2016 opgeleverd",
-          "informatie": "www.wsdh.nl en www.kopgroepbibliotheken.nl"
-        },
-        "plaatjes": {
-            "plaatje": "img_3.jpg"
-        },
-        "phidget": {
-            "312483" : [
-                0
-            ]
-        }
-      },
-      "4": {
-        "titel": "Gevels Beatrixstaat",
-        "omschrijving": "Renovatie gemeentelijk monument in combinatie met nieuwbouw. School 7 heeft de Public Library of the Year Award 2018 gewonnen.",
-        "bullets": {
-          "architect": "Drost en van Veen te Rotterdam i.s.m. Mars interieur te Rotterdam",
-          "ontwikkelaar": "Woningstichting Den Helder i.s.m. Zeestad",
-          "aannemer": "aannemingsbedrijf Dozy BV",
-          "gebruiker": "Kopgroep bibliotheken Den Helder",
-          "planning": "april 2016 opgeleverd",
-          "informatie": "www.wsdh.nl en www.kopgroepbibliotheken.nl"
-        },
-        "plaatjes": {
-            "plaatje": "img_3.jpg"
-        },
-        "phidget": {
-            "312483" : [
-                0
-            ]
-        }
-      },
-      "5": {
-        "titel": "De Hofdame",
-        "omschrijving": "Renovatie gemeentelijk monument in combinatie met nieuwbouw. School 7 heeft de Public Library of the Year Award 2018 gewonnen.",
-        "bullets": {
-          "architect": "Drost en van Veen te Rotterdam i.s.m. Mars interieur te Rotterdam",
-          "ontwikkelaar": "Woningstichting Den Helder i.s.m. Zeestad",
-          "aannemer": "aannemingsbedrijf Dozy BV",
-          "gebruiker": "Kopgroep bibliotheken Den Helder",
-          "planning": "april 2016 opgeleverd",
-          "informatie": "www.wsdh.nl en www.kopgroepbibliotheken.nl"
-        },
-        "plaatjes": {
-            "plaatje": "img_3.jpg"
-        },
-        "phidget": {
-            "312483" : [
-                0
-            ]
-        }
-      },
-      "6": {
-        "titel": "De Hoed",
-        "omschrijving": "Renovatie gemeentelijk monument in combinatie met nieuwbouw. School 7 heeft de Public Library of the Year Award 2018 gewonnen.",
-        "bullets": {
-          "architect": "Drost en van Veen te Rotterdam i.s.m. Mars interieur te Rotterdam",
-          "ontwikkelaar": "Woningstichting Den Helder i.s.m. Zeestad",
-          "aannemer": "aannemingsbedrijf Dozy BV",
-          "gebruiker": "Kopgroep bibliotheken Den Helder",
-          "planning": "april 2016 opgeleverd",
-          "informatie": "www.wsdh.nl en www.kopgroepbibliotheken.nl"
-        },
-        "plaatjes": {
-            "plaatje": "img_3.jpg"
-        },
-        "phidget": {
-            "312483" : [
-                0
-            ]
-        }
-      },
-      "7": {
-        "titel": "Boedel Staete",
-        "omschrijving": "Renovatie gemeentelijk monument in combinatie met nieuwbouw. School 7 heeft de Public Library of the Year Award 2018 gewonnen.",
-        "bullets": {
-          "architect": "Drost en van Veen te Rotterdam i.s.m. Mars interieur te Rotterdam",
-          "ontwikkelaar": "Woningstichting Den Helder i.s.m. Zeestad",
-          "aannemer": "aannemingsbedrijf Dozy BV",
-          "gebruiker": "Kopgroep bibliotheken Den Helder",
-          "planning": "april 2016 opgeleverd",
-          "informatie": "www.wsdh.nl en www.kopgroepbibliotheken.nl"
-        },
-        "plaatjes": {
-            "plaatje": "img_3.jpg"
-        },
-        "phidget": {
-            "312483" : [
-                0
-            ]
-        }
-      },
-      "8": {
-        "titel": "De Werviaan",
-        "omschrijving": "Renovatie gemeentelijk monument in combinatie met nieuwbouw. School 7 heeft de Public Library of the Year Award 2018 gewonnen.",
-        "bullets": {
-          "architect": "Drost en van Veen te Rotterdam i.s.m. Mars interieur te Rotterdam",
-          "ontwikkelaar": "Woningstichting Den Helder i.s.m. Zeestad",
-          "aannemer": "aannemingsbedrijf Dozy BV",
-          "gebruiker": "Kopgroep bibliotheken Den Helder",
-          "planning": "april 2016 opgeleverd",
-          "informatie": "www.wsdh.nl en www.kopgroepbibliotheken.nl"
-        },
-        "plaatjes": {
-            "plaatje": "img_3.jpg"
-        },
-        "phidget": {
-            "312483" : [
-                0
-            ]
-        }
-      },
-      "9": {
-        "titel": "De Melkfabriek",
-        "omschrijving": "Renovatie gemeentelijk monument in combinatie met nieuwbouw. School 7 heeft de Public Library of the Year Award 2018 gewonnen.",
-        "bullets": {
-          "architect": "Drost en van Veen te Rotterdam i.s.m. Mars interieur te Rotterdam",
-          "ontwikkelaar": "Woningstichting Den Helder i.s.m. Zeestad",
-          "aannemer": "aannemingsbedrijf Dozy BV",
-          "gebruiker": "Kopgroep bibliotheken Den Helder",
-          "planning": "april 2016 opgeleverd",
-          "informatie": "www.wsdh.nl en www.kopgroepbibliotheken.nl"
-        },
-        "plaatjes": {
-            "plaatje": "img_3.jpg"
-        },
-        "phidget": {
-            "312483" : [
-                0
-            ]
-        }
-      },
-      "10": {
-        "titel": "Molenplein fase 1",
-        "omschrijving": "Renovatie gemeentelijk monument in combinatie met nieuwbouw. School 7 heeft de Public Library of the Year Award 2018 gewonnen.",
-        "bullets": {
-          "architect": "Drost en van Veen te Rotterdam i.s.m. Mars interieur te Rotterdam",
-          "ontwikkelaar": "Woningstichting Den Helder i.s.m. Zeestad",
-          "aannemer": "aannemingsbedrijf Dozy BV",
-          "gebruiker": "Kopgroep bibliotheken Den Helder",
-          "planning": "april 2016 opgeleverd",
-          "informatie": "www.wsdh.nl en www.kopgroepbibliotheken.nl"
-        },
-        "plaatjes": {
-            "plaatje": "img_3.jpg"
-        },
-        "phidget": {
-            "312483" : [
-                0
-            ]
-        }
-      },
-      "11": {
-        "titel": "Molenplein fase 2",
-        "omschrijving": "Renovatie gemeentelijk monument in combinatie met nieuwbouw. School 7 heeft de Public Library of the Year Award 2018 gewonnen.",
-        "bullets": {
-          "architect": "Drost en van Veen te Rotterdam i.s.m. Mars interieur te Rotterdam",
-          "ontwikkelaar": "Woningstichting Den Helder i.s.m. Zeestad",
-          "aannemer": "aannemingsbedrijf Dozy BV",
-          "gebruiker": "Kopgroep bibliotheken Den Helder",
-          "planning": "april 2016 opgeleverd",
-          "informatie": "www.wsdh.nl en www.kopgroepbibliotheken.nl"
-        },
-        "plaatjes": {
-            "plaatje": "img_3.jpg"
-        },
-        "phidget": {
-            "312483" : [
-                0
-            ]
-        }
-      },
-      "12": {
-        "titel": "Ontwikkeling Stationsgebied",
-        "omschrijving": "Renovatie gemeentelijk monument in combinatie met nieuwbouw. School 7 heeft de Public Library of the Year Award 2018 gewonnen.",
-        "bullets": {
-          "architect": "Drost en van Veen te Rotterdam i.s.m. Mars interieur te Rotterdam",
-          "ontwikkelaar": "Woningstichting Den Helder i.s.m. Zeestad",
-          "aannemer": "aannemingsbedrijf Dozy BV",
-          "gebruiker": "Kopgroep bibliotheken Den Helder",
-          "planning": "april 2016 opgeleverd",
-          "informatie": "www.wsdh.nl en www.kopgroepbibliotheken.nl"
-        },
-        "plaatjes": {
-            "plaatje": "img_3.jpg"
-        },
-        "phidget": {
-            "312483" : [
-                0
-            ]
-        }
-      },
-      "13": {
-        "titel": "Zoetelief",
-        "omschrijving": "Renovatie gemeentelijk monument in combinatie met nieuwbouw. School 7 heeft de Public Library of the Year Award 2018 gewonnen.",
-        "bullets": {
-          "architect": "Drost en van Veen te Rotterdam i.s.m. Mars interieur te Rotterdam",
-          "ontwikkelaar": "Woningstichting Den Helder i.s.m. Zeestad",
-          "aannemer": "aannemingsbedrijf Dozy BV",
-          "gebruiker": "Kopgroep bibliotheken Den Helder",
-          "planning": "april 2016 opgeleverd",
-          "informatie": "www.wsdh.nl en www.kopgroepbibliotheken.nl"
-        },
-        "plaatjes": {
-            "plaatje": "img_3.jpg"
-        },
-        "phidget": {
-            "312483" : [
-                0
-            ]
-        }
-      },
-      "14": {
-        "titel": "De Vijfsprong",
-        "omschrijving": "Renovatie gemeentelijk monument in combinatie met nieuwbouw. School 7 heeft de Public Library of the Year Award 2018 gewonnen.",
-        "bullets": {
-          "architect": "Drost en van Veen te Rotterdam i.s.m. Mars interieur te Rotterdam",
-          "ontwikkelaar": "Woningstichting Den Helder i.s.m. Zeestad",
-          "aannemer": "aannemingsbedrijf Dozy BV",
-          "gebruiker": "Kopgroep bibliotheken Den Helder",
-          "planning": "april 2016 opgeleverd",
-          "informatie": "www.wsdh.nl en www.kopgroepbibliotheken.nl"
-        },
-        "plaatjes": {
-            "plaatje": "img_3.jpg"
-        },
-        "phidget": {
-            "312483" : [
-                0
-            ]
-        }
-      },
-      "15": {
-        "titel": "Watertoren",
-        "omschrijving": "Renovatie gemeentelijk monument in combinatie met nieuwbouw. School 7 heeft de Public Library of the Year Award 2018 gewonnen.",
-        "bullets": {
-          "architect": "Drost en van Veen te Rotterdam i.s.m. Mars interieur te Rotterdam",
-          "ontwikkelaar": "Woningstichting Den Helder i.s.m. Zeestad",
-          "aannemer": "aannemingsbedrijf Dozy BV",
-          "gebruiker": "Kopgroep bibliotheken Den Helder",
-          "planning": "april 2016 opgeleverd",
-          "informatie": "www.wsdh.nl en www.kopgroepbibliotheken.nl"
-        },
-        "plaatjes": {
-            "plaatje": "img_3.jpg"
-        },
-        "phidget": {
-            "312483" : [
-                0
-            ]
-        }
-      },
-      "16": {
-        "titel": "De Kamerheer",
-        "omschrijving": "Renovatie gemeentelijk monument in combinatie met nieuwbouw. School 7 heeft de Public Library of the Year Award 2018 gewonnen.",
-        "bullets": {
-          "architect": "Drost en van Veen te Rotterdam i.s.m. Mars interieur te Rotterdam",
-          "ontwikkelaar": "Woningstichting Den Helder i.s.m. Zeestad",
-          "aannemer": "aannemingsbedrijf Dozy BV",
-          "gebruiker": "Kopgroep bibliotheken Den Helder",
-          "planning": "april 2016 opgeleverd",
-          "informatie": "www.wsdh.nl en www.kopgroepbibliotheken.nl"
-        },
-        "plaatjes": {
-            "plaatje": "img_3.jpg"
-        },
-        "phidget": {
-            "312483" : [
-                0
-            ]
-        }
-      },
-      "17": {
-        "titel": "Hotel Wienerhof",
-        "omschrijving": "Renovatie gemeentelijk monument in combinatie met nieuwbouw. School 7 heeft de Public Library of the Year Award 2018 gewonnen.",
-        "bullets": {
-          "architect": "Drost en van Veen te Rotterdam i.s.m. Mars interieur te Rotterdam",
-          "ontwikkelaar": "Woningstichting Den Helder i.s.m. Zeestad",
-          "aannemer": "aannemingsbedrijf Dozy BV",
-          "gebruiker": "Kopgroep bibliotheken Den Helder",
-          "planning": "april 2016 opgeleverd",
-          "informatie": "www.wsdh.nl en www.kopgroepbibliotheken.nl"
-        },
-        "plaatjes": {
-            "plaatje": "img_3.jpg"
-        },
-        "phidget": {
-            "312483" : [
-                0
-            ]
-        }
-      }
+  "1": {
+     "plaatjes": "img_1.jpg",
+     "titel": "Keizersbrug",
+     "subtitel": "",
+     "omschrijving": "Woningstichting realiseerde 11 appartementen en 1 bedrijfsruimte op de begane grond.",
+     "punten": {
+       "Architect": "Kapitein Jacobs Kapitein te Den Helder",
+       "Ontwikkelaar": "Woningstichting Den Helder",
+       "Aannemer": "aannemingsbedrijf Dozy BV",
+       "Gebruiker": "n.v.t",
+       "Planning": "juni 2014 opgeleverd"
+     },
+     "phidget": {
+       "312483" : [
+           0
+       ]
+   },
+     "informatie": "Neem voor meer informatie contact op met Woningstichting Den Helder (0223 677677) of bekijk de website  www.wsdh.nl"
+  },
+  "2": {
+     "plaatjes": "img_2.jpg",
+     "titel": "School 7 bibliotheek Den Helder",
+     "subtitel": "",
+     "omschrijving": "Renovatie gemeentelijk monument in combinatie met nieuwbouw. School 7 heeft de Public Library of the Year Award 2018 gewonnen.",
+     "punten": {
+       "Architect": "Drost en van Veen te Rotterdam i.s.m. Mars interieur te Rotterdam",
+       "Ontwikkelaar": "Woningstichting Den Helder i.s.m. Zeestad",
+       "Aannemer": "aannemingsbedrijf Dozy BV",
+       "Gebruiker": "Kopgroep bibliotheken Den Helder",
+       "Planning": "april 2016 opgeleverd"
+   },
+   "phidget": {
+       "312483" : [
+           0
+       ]
+   },
+     "informatie": "www.wsdh.nl en www.kopgroepbibliotheken.nl"
+  },
+  "3": {
+     "plaatjes": "img_3.jpg",
+     "titel": "Kop Beatrixstraat",
+     "subtitel": "",
+     "omschrijving": "3 koopappartementen, 24 eenheden t.b.v. Vrijwaard en 2 bedrijfsruimten aan de zijde Beatrixstraat. Elk appartement beschikt over een groot dakterras, variërend van 65 m² tot 93 m², met uitzicht over het stadshart van Den Helder. De appartementen zijn zowel per lift als per trap te bereiken en bestaan uit een woonkamer met keuken, twee slaapkamers, een badkamer, apart toilet en berging.",
+     "punten": {
+       "Architect": "Heren5 architecten Amsterdam",
+       "Ontwikkelaar": "Woningstichting Den Helder",
+       "Aannemer": "aannemingsbedrijf Dozy BV",
+       "Gebruiker": "Stichting Vrijwaard",
+       "Planning": "oktober 2014 opgeleverd"
+   },
+   "phidget": {
+       "312483" : [
+           0
+       ]
+   },
+     "informatie": "Voor meer informatie over de 24 eenheden: www.vrijwaard.nl"
+  },
+  "4": {
+     "plaatjes": "img_4.jpg",
+     "titel": "Gevels Beatrixstraat",
+     "subtitel": "",
+     "omschrijving": "Gevelrenovatie in de Keizer- en Beatrixstraat, zowel winkelplint als bovenliggende woonruimte",
+     "punten": {
+       "Architect": "Kapitein Jacobs Kapitein te Den Helder",
+       "Ontwikkelaar": "Woningstichting Den Helder",
+       "Aannemer": "aannemingsbedrijf Dozy BV",
+       "Gebruiker": "divers",
+       "Planning": "lopend traject"
+   },
+   "phidget": {
+       "312483" : [
+           0
+       ]
+   },
+     "informatie": "Neem voor meer informatie contact op met Woningstichting Den Helder (0223 677677) of bekijk de website  www.wsdh.nl"
+  },
+  "5": {
+     "plaatjes": "img_5.jpg",
+     "titel": "De Hofdame",
+     "omschrijving": "Woningstichting Den Helder realiseert aan de zuidzijde van de Beatrixstraat 8 appartementen, 6 woningen en op de begane grond ook nog 2 bedrijfsruimtes. De woningen/appartementen krijgen een woonkamer met open keuken, twee slaapkamers en een badkamer. Elke woning heeft een eigen buitenruimte en een berging op de begane grond. De terrassen liggen op het zuidwesten en zijn dus zeer zonnig! Het parkeren kan in de nabijgelegen parkeergarage aan de Sluisdijkstraat.",
+     "punten": {
+       "Architect": "Geurst en Schulze te Den Haag",
+       "Ontwikkelaar": "Woningstichting Den Helder",
+       "Aannemer": "aannemingsbedrijf Dozy BV",
+       "Gebruiker": "n.v.t",
+       "Planning": "eind 2018 opgeleverd"
+   },
+   "phidget": {
+       "312483" : [
+           0
+       ]
+   },
+     "informatie": "Neem voor meer informatie contact op met Woningstichting Den Helder (0223 677677) of bekijk de website  www.wsdh.nl"
+  },
+  "6": {
+     "plaatjes": "img_6.jpg",
+     "titel": "De Hoed",
+     "subtitel": "",
+     "omschrijving": "11 huurappartementen en op de begane grond artsen en een fysiopraktijk.",
+     "punten": {
+       "Architect": "Lambert architecten Amsterdam",
+       "Ontwikkelaar": "Woningstichting Den Helder",
+       "Aannemer": "aannemingsbedrijf Dozy BV",
+       "Gebruiker": "divers",
+       "Planning": "2012 opgeleverd"
+   },
+   "phidget": {
+       "312483" : [
+           0
+       ]
+   },
+     "informatie": "Neem voor meer informatie contact op met Woningstichting Den Helder (0223 677677) of bekijk de website  www.wsdh.nl"
+  },
+  "7": {
+     "plaatjes": "img_7.jpg",
+     "titel": "Boedel Staete",
+     "subtitel": "",
+     "omschrijving": "11 huurappartementen t.b.v. zorgpartij S’ Heerenloo",
+     "punten": {
+       "Architect": "Architectuurbureau Sluijmer en van Leeuwen te Utrecht",
+       "Ontwikkelaar": "Woningstichting Den Helder",
+       "Aannemer": "aannemingsbedrijf Dozy BV",
+       "Gebruiker": "bewoners met lichte beperking",
+       "Planning": "2010 opgeleverd"
+   },
+   "phidget": {
+       "312483" : [
+           0
+       ]
+   },
+     "informatie": "www.wsdh.nl en www.sheerenloo.nl"
+  },
+  "8": {
+     "plaatjes": "img_8.jpg",
+     "titel": "De Werviaan",
+     "subtitel": "",
+     "omschrijving": "33 ruime, moderne eengezinswoningen aan de Molenstraat, Diaconiestraat en Californiestraat in het stadshart van Den Helder.",
+     "punten": {
+       "Architect": "Architectuurbureau Sluijmer en van Leeuwen te Utrecht",
+       "Ontwikkelaar": "Woningstichting Den Helder",
+       "Aannemer": "aannemingsbedrijf Dozy BV",
+       "Gebruiker": "divers",
+       "Planning": "2012 opgeleverd"
+   },
+   "phidget": {
+       "312483" : [
+           0
+       ]
+   },
+     "informatie": "Neem voor meer informatie contact op met Woningstichting Den Helder (0223 677677) of bekijk de website  www.wsdh.nl"
+  },
+  "9": {
+     "plaatjes": "img_9.jpg",
+     "titel": "De Melkfabriek",
+     "subtitel": "",
+     "omschrijving": "Het project De Melkfabriek bestaat uit vijf grondgebonden koopwoningen aan de Westgracht/Molenstraat en ligt midden in het centrum van Den Helder met alle voorzieningen op loopafstand.",
+     "punten": {
+       "Architect": "Kapitein Jacobs Kapitein te Den Helder",
+       "Ontwikkelaar": "Woningstichting Den Helder",
+       "Aannemer": "aannemingsbedrijf Dozy BV",
+       "Gebruiker": "n.v.t.",
+       "Planning": "december 2016 opgeleverd"
+   },
+   "phidget": {
+       "312483" : [
+           0
+       ]
+   },
+     "informatie": "Neem voor meer informatie contact op met Woningstichting Den Helder (0223 677677) of bekijk de website  www.wsdh.nl"
+  },
+  "10": {
+     "plaatjes": "img_10.jpg",
+     "titel": "Rozenhout",
+     "subtitel": "",
+     "omschrijving": "Zeven markante herenhuizen met aan de achterzijde elk een eigen stadstuin en een gezamenlijke stallingruimte voor één auto per woning.",
+     "punten": {
+       "Architect": "HP Architecten te Rotterdam",
+       "Ontwikkelaar": "Woningstichting Den Helder i.s.m. Proper Stok",
+       "Aannemer": "aannemingsbedrijf Dozy BV te Den Helder",
+       "Gebruiker": "n.v.t.",
+       "Planning": "2e kwartaal 2014 opgeleverd"
+   },
+   "phidget": {
+       "312483" : [
+           0
+       ]
+   },
+     "informatie": "Neem voor meer informatie contact op met Woningstichting Den Helder (0223 677677) of bekijk de website  www.wsdh.nl"
+  },
+  "11": {
+     "plaatjes": "img_11.jpg",
+     "titel": "Molenplein fase 1",
+     "subtitel": "",
+     "omschrijving": "34 koopappartementen",
+     "punten": {
+       "Architect": "Geurst en Schulz architecten",
+       "Ontwikkelaar": "Proper Stok",
+       "Aannemer": "aannemingsbedrijf Tuin BV Den Helder",
+       "Gebruiker": "appartementen t.b.v. koop",
+       "Planning": "2012 opgeleverd"
+   },
+   "phidget": {
+       "312483" : [
+           0
+       ]
+   },
+     "informatie": "Neem voor meer informatie contact op met Woningstichting Den Helder (0223 677677) of bekijk de website  www.wsdh.nl"
+  },
+  "12": {
+     "plaatjes": "img_12.jpg",
+     "titel": "De Zusters",
+     "subtitel": "",
+     "omschrijving": "Woningstichting bouwt op de locatie van de voormalige Zusterflat een complex van 23 wooneenheden, verdeeld over appartementen en eengezinswoningen. Bewoners krijgen eigen parkeergelegenheid onder het complex. Met de bouw, naar een ontwerp van architectenbureau Wingerden-Hovenier uit Amsterdam, wordt medio 2015 gestart.",
+     "punten": {
+       "Architect": "WinHov architecten",
+       "Ontwikkelaar": "Woningstichting Den Helder",
+       "Aannemer": "aannemingsbedrijf Dozy BV",
+       "Gebruiker": "n.v.t.",
+       "Planning": "begin 2019 opgeleverd"
+   },
+   "phidget": {
+       "312483" : [
+           0
+       ]
+   },
+     "informatie": "Neem voor meer informatie contact op met Coltof makelaardij via www.coltofmakelaardij.nl."
+  },
+  "13": {
+     "plaatjes": "img_13.jpg",
+     "titel": "Bellevue",
+     "subtitel": "",
+     "omschrijving": "Nieuwbouwontwikkeling op de locatie van de huidige schouwburg. Op de beganegrond komen winkelruimtes en op de verdiepingen woningbouw.",
+     "punten": {
+       "Architect": "Attika architecten",
+       "Ontwikkelaar": "Woningstichting Den Helder",
+       "Aannemer": "aannemingsbedrijf Dozy BV",
+       "Gebruiker": "retail partijen en woningen t.b.v verkoop of verhuur",
+       "Planning": "nog niet bekend"
+   },
+   "phidget": {
+       "312483" : [
+           0
+       ]
+   },
+     "informatie": "volgt in later stadium"
+  },
+  "14": {
+     "plaatjes": "img_14.jpg",
+     "titel": "Ontwikkeling Stationsgebied",
+     "subtitel": "",
+     "omschrijving": "De komende jaren wordt het Stadshart verder versterkt en ontwikkeld. De ambitie is een levendig Stadshart waar mensen graag naar toe komen en willen verblijven. Met andere woorden: Het Stadshart als ‘de Huiskamer van onze Stad’.",
+     "punten": {
+       "Architect": "niet bekend",
+       "Ontwikkelaar": "Zeestad, gemeente Den Helder en West 8",
+       "Aannemer": "divers",
+       "Gebruiker": "gemeente Den Helder",
+       "Planning": "2017 opgeleverd"
+   },
+   "phidget": {
+       "312483" : [
+           0
+       ]
+   },
+     "informatie": "www.denhelder.nl"
+  },
+  "15": {
+     "plaatjes": "img_15.jpg",
+     "titel": "Zoetelief",
+     "omschrijving": "Woningstichting Den Helder realiseert op de locatie van de voormalige winkels Vögele en Drie Boekjes 7 woningen en op de begane grond 2 bedrijfsruimtes op de begane grond. De woningen krijgen een woonkamer met open keuken, twee slaapkamers en een badkamer. Elke woning heeft een eigen buitenruimte en een berging op de begane grond.",
+     "punten": {
+       "Architect": "Onno Vlaanderen te Amsterdam",
+       "Ontwikkelaar": "Woningstichting Den Helder",
+       "Aannemer": "aannemingsbedrijf Dozy BV",
+       "Gebruiker": "n.v.t",
+       "Planning": "2016 opgeleverd"
+   },
+   "phidget": {
+       "312483" : [
+           0
+       ]
+   },
+     "informatie": "Neem voor meer informatie contact op met Woningstichting Den Helder (0223 677677) of bekijk de website  www.wsdh.nl"
+  },
+  "16": {
+     "plaatjes": "img_16.jpg",
+     "titel": "Spuistraat",
+     "subtitel": "",
+     "omschrijving": "Her- en nieuwbouw Spuistraat",
+     "punten": {
+       "Architect": "volgt",
+       "Ontwikkelaar": "Helder Vastgoed BV",
+       "Aannemer": "nog niet bekend",
+       "Gebruiker": "diverse",
+       "Planning": "start bouw 2019"
+   },
+   "phidget": {
+       "312483" : [
+           0
+       ]
+   },
+     "informatie": "Neem voor meer informatie contact op met Woningstichting Den Helder (0223 677677) of bekijk de website  www.wsdh.nl"
+  },
+  "17": {
+     "plaatjes": "img_17.jpg",
+     "titel": "De Postbrug",
+     "subtitel": "",
+     "omschrijving": "Dit bestaande pand is herontwikkeld en verhuurd",
+     "punten": {
+       "Architect": "Kapitein Jacobs Kapitein te Den Helder",
+       "Ontwikkelaar": "Woningstichting Den Helder",
+       "Aannemer": "aannemingsbedrijf Dozy BV",
+       "Gebruiker": "huurder is Leger des Heils",
+       "Planning": "opgeleverd 2007"
+   },
+   "phidget": {
+       "312483" : [
+           0
+       ]
+   },
+     "informatie": "n.v.t."
+  },
+  "18": {
+     "plaatjes": "img_18.jpg",
+     "titel": "Prins Hendrik Kwartier",
+     "omschrijving": "Woningstichting Den Helder realiseert op de locatie van het voormalige VBM-gebouw 3 grondgebonden woningen en 6 appartementen. De drie grondgebonden woningen worden voorzien van een woonkamer met open keuken en een tuin met berging. Op de verdieping komen 3 slaapkamers en een badkamer. De zolderverdieping is bereikbaar via een vaste trap. De zes appartementen worden verdeeld over  een blok van drie woonlagen (twee appartementen per woonlaag). Het gebouw wordt voorzien van een centraal trappenhuis en een lift. De appartementen zullen bestaan uit 2 slaapkamers, een woonkamer met keuken en een eigen buitenruimte met een berging.",
+     "punten": {
+       "Architect": "HP Architecten te Rotterdam",
+       "Ontwikkelaar": "Woningstichting Den Helder",
+       "Aannemer": "aannemingsbedrijf Dozy BV",
+       "Gebruiker": "n.v.t",
+       "Planning": "Verwachte oplevering: begin 2019"
+   },
+   "phidget": {
+       "312483" : [
+           0
+       ]
+   },
+     "informatie": "Voor meer informatie kunt u contact opnemen met de verkoopmakelaar Coltof , telefoonnummer (0223) 200005 of via de website www.coltofmakelaardij.nl/ ."
+  },
+  "19": {
+     "plaatjes": "img_19.jpg",
+     "titel": "De Vijfsprong",
+     "subtitel": "",
+     "omschrijving": "Het hoofdkantoor van Woningstichting Den Helder zit in gebouw 'De Vijfsprong' aan de Middenweg in Den Helder. Dit monumentale pand is in 2007 compleet gerenoveerd en aangevuld met het Woonplein. Het Woonplein bevindt zich tussen het hoofdkantoor en de nieuwbouwvleugel, genaamd 'Achter de Vijfsprong'. Het Woonplein is de ontvangstruimte van Woningstichting Den Helder.",
+     "punten": {
+       "Architect": "Kapitein Jacobs Kapitein te Den Helder",
+       "Ontwikkelaar": "Woningstichting Den Helder",
+       "Aannemer": "aannemingsbedrijf L.vd Wal en Zn te Den Helder",
+       "Gebruiker": "hoofdkantoor Woningstichting Den Helder",
+       "Planning": "opgeleverd 2005"
+   },
+   "phidget": {
+       "312483" : [
+           0
+       ]
+   },
+     "informatie": "www.wsdh.nl"
+  },
+  "20": {
+     "plaatjes": "img_20.jpg",
+     "titel": "Schouwburg de Kampanje",
+     "subtitel": "",
+     "omschrijving": "Wie straks Den Helder binnen komt rijden of varen, wordt verwelkomd door een spraakmakend gebouw aan de Maritieme Binnenhaven: de schouwburg van Den Helder. Op de oude Rijkswerf Willemsoord krijgt Den Helder een van de meest bijzondere schouwburgen van het land. Deze schouwburg is zelfs het boegbeeld van de transformatie van Willemsoord. De nieuwe invulling toont respect voor de monumentale waarden van het gebied en de panden, het benadrukt het karakter van de werf. Als locatie is gekozen voor de voormalige Ketelmakerij (1920) in combinatie met De Kathedraal (1916), het voormalige Machinaal of Bankwerkerij. De vestiging van de schouwburg in deze gebouwen geeft een compleet nieuwe identiteit aan de entree van de stad.",
+     "punten": {
+       "Architect": "Van Dongen-Koschuch",
+       "Ontwikkelaar": "Zeestad i.s.m. gemeente Den Helder",
+       "Aannemer": "Bouwbedrijf M.J. de Nijs en Zonen BV uit Warmenhuizen",
+       "Gebruiker": "huurder complete planvorming schouwburg de Kampanje",
+       "Planning": "2015 opgeleverd"
+   },
+   "phidget": {
+       "312483" : [
+           0
+       ]
+   },
+     "informatie": "zie www.zeestad.nl en www.kampanje.nl"
+  },
+  "21": {
+     "plaatjes": "img_21.jpg",
+     "titel": "Westgracht 65",
+     "subtitel": "",
+     "omschrijving": "Aan- en verbouw bestaand pand, functies zijn: combinatie van wonen en werken",
+     "punten": {
+       "Architect": "Hugo van der Laan",
+       "Ontwikkelaar": "Woningstichting Den Helder",
+       "Aannemer": "aannemingsbedrijf Dozy BV",
+       "Gebruiker": "het object staat zowel te huur als te koop",
+       "Planning": "2016 opgeleverd"
+   },
+   "phidget": {
+       "312483" : [
+           0
+       ]
+   },
+     "informatie": "Neem voor meer informatie contact op met Woningstichting Den Helder (0223 677677) of bekijk de website  www.wsdh.nl"
+  },
+  "22": {
+     "plaatjes": "img_22.jpg",
+     "titel": "Parkeergarage Sluisdijkstraat",
+     "subtitel": "",
+     "omschrijving": "openbare parkeergarage met een capaciteit van 181 plaatsen",
+     "punten": {
+       "Architect": "GEO Architecten Schagen",
+       "Ontwikkelaar": "Zeestad i.s.m. gemeente Den Helder",
+       "Aannemer": "aannemingsbedrijf Tuin BV Den Helder",
+       "Gebruiker": "n.v.t.",
+       "Planning": "opgeleverd 2013"
+   },
+   "phidget": {
+       "312483" : [
+           0
+       ]
+   },
+     "informatie": "zie o.a. http://www.p1.nl/parkeren/den-helder"
+  },
+  "23": {
+     "plaatjes": "img_23.jpg",
+     "titel": "Watertoren Den Helder",
+     "subtitel": "",
+     "omschrijving": "De nieuwe watertoren van de Nederlandse plaats Den Helder is ontworpen door architect Jan Schotel en werd gebouwd in 1908.De watertoren is 40,15 meter hoog en staat aan de T-splitsing van de Vijfsprong en Polderweg.",
+     "punten": {
+       "Architect": "Jan Schotel",
+       "Ontwikkelaar": "n.v.t.",
+       "Aannemer": "n.v.t.",
+       "Gebruiker": "op dit moment is de watertoren particulier eigendom",
+       "Planning": "n.v.t."
+   },
+   "phidget": {
+       "312483" : [
+           0
+       ]
+   },
+     "informatie": "n.v.t."
+  },
+  "24": {
+     "plaatjes": "img_24.jpg",
+     "titel": "Over het Wad",
+     "subtitel": "",
+     "omschrijving": "51 Panorama appartementen en 9 herenhuizen in Den Helder. De toekomstige bewoners krijgen een uniek zicht over het Waddengebied.",
+     "punten": {
+       "Architect": "Geurst en Schulze Architecten te Den Haag en Tony Fretton Architecten te Londen",
+       "Ontwikkelaar": "Heijmans Vastgoed | Proper-Stok Ontwikkelaars",
+       "Aannemer": "A. Tuin Den Helder BV",
+       "Gebruiker": "",
+       "Planning": "Start bouw 2018"
+   },
+   "phidget": {
+       "312483" : [
+           0
+       ]
+   },
+     "informatie": "Meer informatie staat op de website www.overhetwad.com"
+  },
+  "25": {
+     "plaatjes": "no-image.png",
+     "titel": "Molenplein fase 2",
+     "subtitel": "",
+     "omschrijving": "Hier worden grondgebonden woningen ontwikkeld.",
+     "punten": {
+       "Architect": "architectenbureau Geurst en Schulze",
+       "Ontwikkelaar": "Woningstichting Den Helder",
+       "Aannemer": "Nog niet bekend",
+       "Gebruiker": "Divers",
+       "Planning": "Nog niet bekend"
+   },
+   "phidget": {
+       "312483" : [
+           0
+       ]
+   },
+     "informatie": ""
+  },
+  "26": {
+     "plaatjes": "img_26.jpg",
+     "titel": "De Kamerheer",
+     "subtitel": "",
+     "omschrijving": "Aan de zuidzijde van de Beatrixstraat ontwikkelt Helder Vastgoed BV 17 huurappartementen met op de begane grond een restaurant.",
+     "punten": {
+       "Architect": "architectenbureau Geurst en Schulze",
+       "Ontwikkelaar": "Woningstichting Den Helder",
+       "Aannemer": "aannemingsbedrijf Dozy BV",
+       "Gebruiker": "divers",
+       "Planning": "start bouw eind 2e kwartaal 2018"
+   },
+   "phidget": {
+       "312483" : [
+           0
+       ]
+   },
+     "informatie": "Neem voor meer informatie contact op met Woningstichting Den Helder (0223 677677) of bekijk de website  www.wsdh.nl"
+  },
+  "27": {
+     "plaatjes": "img_27.jpg",
+     "titel": "Casino Flamingo Beatrixstraat",
+     "subtitel": "",
+     "omschrijving": "",
+     "punten": {
+       "Architect": "architectenbureau Kapitein Jacobs Kapitein",
+       "Ontwikkelaar": "Woningstichting Den Helder",
+       "Aannemer": "Nog niet bekend",
+       "Gebruiker": "divers",
+       "Planning": "start bouw 2019"
+   },
+   "phidget": {
+       "312483" : [
+           0
+       ]
+   },
+     "informatie": "Nog niet bekend"
+  },
+  "28": {
+     "plaatjes": "img_28.jpg",
+     "titel": "Hotel Wienerhof",
+     "subtitel": "",
+     "omschrijving": "",
+     "punten": {
+       "Architect": "architectenbureau Kapitein Jacobs Kapitein",
+       "Ontwikkelaar": "eigenaar hotel dhr. Wijnhold Bos",
+       "Aannemer": "aannemingsbedrijf L. vd Wal en Zn te Den Helder",
+       "Gebruiker": "divers",
+       "Planning": "Nog niet bekend"
+   },
+   "phidget": {
+       "312483" : [
+           0
+       ]
+   },
+     "informatie": "Nog niet bekend"
+  },
+  "29": {
+     "plaatjes": "img_29.jpg",
+     "titel": "Koningsdriehoek",
+     "subtitel": "",
+     "omschrijving": "",
+     "punten": {
+       "Architect": "West 8",
+       "Ontwikkelaar": "Woningstichting Den Helder",
+       "Aannemer": "Nog niet bekend",
+       "Gebruiker": "divers",
+       "Planning": "Nog niet bekend"
+   },
+   "phidget": {
+       "312483" : [
+           0
+       ]
+   },
+     "informatie": "Nog niet bekend"
+  },
+  "30": {
+     "plaatjes": "img_30.jpg",
+     "titel": "Spoorstraat oude casino locatie",
+     "subtitel": "",
+     "omschrijving": "",
+     "punten": {
+       "Architect": "HP architecten",
+       "Ontwikkelaar": "Woningstichting Den Helder",
+       "Aannemer": "Nog niet bekend",
+       "Gebruiker": "divers",
+       "Planning": "Nog niet bekend"
+   },
+   "phidget": {
+       "312483" : [
+           0
+       ]
+   },
+     "informatie": "Nog niet bekend"
+  },
+  "31": {
+     "plaatjes": "img_31.jpg",
+     "titel": "Willemsoord",
+     "subtitel": "",
+     "omschrijving": "Gebouw 51 op de oude Rijkswerf wordt momenteel verbouwd voor dedrie horeca-etablissementen Odeklonje, Pimpandoer en Bar Bonaire. Momenteel zitten die nog in de Koningstraat.",
+     "punten": {
+       "Architect": "n.v.t.",
+       "Ontwikkelaar": "A. Tuin Den Helder BV",
+       "Aannemer": "Nog niet bekend",
+       "Gebruiker": "Odeklonje, Pimpandoer en Bar Bonaire",
+       "Planning": "Medio 2019"
+   },
+   "phidget": {
+       "312483" : [
+           0
+       ]
+   },
+     "informatie": "N.v.t."
+  },
+  "32": {
+     "plaatjes": "img_32.jpg",
+     "titel": "Konings- en Spoorstraat",
+     "subtitel": "",
+     "omschrijving": "Het stadshart van Den Helder moet compacter worden om zijn kracht te behouden. Leegstaande winkels en horecazaken aan de randen van het winkelcentrum, in vooral Koningstraat en Spoorstraat-Oost, worden de komende\njaren verbouwd tot woningen. Dat is noodzakelijk voor het verbeteren van de leefbaarheid in deze buurt. Als eerste staat renovatie/herontwikkeling van woningen aan de Koningdwarsstraat op de planning. Daarnaast worden de Spoorstraat-Oost en Koningstraat weer toegankelijk voor autoverkeer. Hiermee wordt benadrukt dat dit deel van het stadshart geen centraal winkelgebied meer is. Een deel van de horecazaken heeft plannen om naar Willemsoord te verhuizen.",
+     "punten": {
+       "Architect": "Onbekend",
+       "Ontwikkelaar": "Onbekend",
+       "Aannemer": "Nog niet bekend",
+       "Gebruiker": "divers",
+       "Planning": "Nog niet bekend"
+   },
+   "phidget": {
+       "312483" : [
+           0
+       ]
+   },
+     "informatie": "Nog niet bekend"
+  }
 }
