@@ -16,6 +16,7 @@
            0
        ]
    },
+   "polygon": "624 904 660 904 660 917 655 917 655 925 645 925 632 915",
      "informatie": "Neem voor meer informatie contact op met Woningstichting Den Helder (0223 677677) of bekijk de website  www.wsdh.nl"
   },
   "2": {
@@ -30,6 +31,7 @@
        "Gebruiker": "Kopgroep bibliotheken Den Helder",
        "Planning": "april 2016 opgeleverd"
    },
+   "polygon": "616 845 618 885 640 880 640 845",
    "phidget": {
        "312483" : [
            0
@@ -49,6 +51,7 @@
        "Gebruiker": "Stichting Vrijwaard",
        "Planning": "oktober 2014 opgeleverd"
    },
+   "polygon": "558 856 582 856 582 884 558 890",
    "phidget": {
        "312483" : [
            0
@@ -68,6 +71,7 @@
        "Gebruiker": "divers",
        "Planning": "lopend traject"
    },
+   "polygon": "499 868 512 872 512 868 531 867 531 855 551 855 551 887 504 893",
    "phidget": {
        "312483" : [
            0
@@ -86,6 +90,7 @@
        "Gebruiker": "n.v.t",
        "Planning": "eind 2018 opgeleverd"
    },
+   "polygon": "476 917 538 909 540 932 478 941",
    "phidget": {
        "312483" : [
            0
@@ -105,6 +110,7 @@
        "Gebruiker": "divers",
        "Planning": "2012 opgeleverd"
    },
+   "polygon": "558 808 558 775 581 775 581 797 570 797 570 808",
    "phidget": {
        "312483" : [
            0
@@ -124,6 +130,7 @@
        "Gebruiker": "bewoners met lichte beperking",
        "Planning": "2010 opgeleverd"
    },
+   "polygon": "558 706 581 706 581 720 558 720",
    "phidget": {
        "312483" : [
            0
@@ -143,6 +150,7 @@
        "Gebruiker": "divers",
        "Planning": "2012 opgeleverd"
    },
+   "polygon": "538 722 552 722 552 777 538 777 528 768 540 753 491 707 449 751 440 740 495 682",
    "phidget": {
        "312483" : [
            0
@@ -162,6 +170,7 @@
        "Gebruiker": "n.v.t.",
        "Planning": "december 2016 opgeleverd"
    },
+   "polygon": "558 636 583 636 583 662 558 662",
    "phidget": {
        "312483" : [
            0
@@ -181,6 +190,7 @@
        "Gebruiker": "n.v.t.",
        "Planning": "2e kwartaal 2014 opgeleverd"
    },
+   "polygon": "519 568 494 593 468 567 480 555 489 564 502 551",
    "phidget": {
        "312483" : [
            0
@@ -200,6 +210,7 @@
        "Gebruiker": "appartementen t.b.v. koop",
        "Planning": "2012 opgeleverd"
    },
+   "polygon": "642 506 618 506 618 401 642 401",
    "phidget": {
        "312483" : [
            0
@@ -219,6 +230,7 @@
        "Gebruiker": "n.v.t.",
        "Planning": "begin 2019 opgeleverd"
    },
+   "polygon": "153 848 200 848 200 875 153 875",
    "phidget": {
        "312483" : [
            0
@@ -238,6 +250,7 @@
        "Gebruiker": "retail partijen en woningen t.b.v verkoop of verhuur",
        "Planning": "nog niet bekend"
    },
+   "polygon": "264 824 248 809 244 754 310 684 328 706 320 716 318 722 309 733 299 724 286 737 298 748 290 754 311 775",
    "phidget": {
        "312483" : [
            0
@@ -257,6 +270,7 @@
        "Gebruiker": "gemeente Den Helder",
        "Planning": "2017 opgeleverd"
    },
+   "polygon": "243 1003 239 984 255 973 274 977 276 970 275 964 270 958 268 956 251 955 170 986 234 1050 245 1050",
    "phidget": {
        "312483" : [
            0
@@ -275,6 +289,7 @@
        "Gebruiker": "n.v.t",
        "Planning": "2016 opgeleverd"
    },
+   "polygon": "445 895 445 901 413 903 413 890 416 890 415 887 409 882 421 869",
    "phidget": {
        "312483" : [
            0
@@ -294,6 +309,7 @@
        "Gebruiker": "diverse",
        "Planning": "start bouw 2019"
    },
+   "polygon": "339 705 313 676 342 647 371 676",
    "phidget": {
        "312483" : [
            0
@@ -336,6 +352,7 @@
            0
        ]
    },
+   "polygon": "288 669 276 681 272 678 270 679 270 689 257 689 252 662 258 662 260 653 266 647",
      "informatie": "Voor meer informatie kunt u contact opnemen met de verkoopmakelaar Coltof , telefoonnummer (0223) 200005 of via de website www.coltofmakelaardij.nl/ ."
   },
   "19": {
@@ -355,6 +372,7 @@
            0
        ]
    },
+   "polygon": "70 1010 54 1026 35 1008 47 1000 59 1000 59 988 48 988 48 980 61 978 61 974 74 973 79 1008",
      "informatie": "www.wsdh.nl"
   },
   "20": {
@@ -369,6 +387,7 @@
        "Gebruiker": "huurder complete planvorming schouwburg de Kampanje",
        "Planning": "2015 opgeleverd"
    },
+   "polygon": "",
    "phidget": {
        "312483" : [
            0
@@ -388,6 +407,7 @@
        "Gebruiker": "het object staat zowel te huur als te koop",
        "Planning": "2016 opgeleverd"
    },
+   "polygon": "",
    "phidget": {
        "312483" : [
            0
@@ -407,6 +427,7 @@
        "Gebruiker": "n.v.t.",
        "Planning": "opgeleverd 2013"
    },
+   "polygon": "",
    "phidget": {
        "312483" : [
            0
@@ -425,6 +446,13 @@
        "Aannemer": "n.v.t.",
        "Gebruiker": "op dit moment is de watertoren particulier eigendom",
        "Planning": "n.v.t."
+   },
+   "rect": {
+    "x": "154",
+    "y": "942",
+    "width": "13",
+    "height": "13",
+    "rx": "15"
    },
    "phidget": {
        "312483" : [
@@ -445,6 +473,7 @@
        "Gebruiker": "",
        "Planning": "Start bouw 2018"
    },
+   "polygon": "644 299 617 299 605 283 587 268 564 261 545 262 543 257 605 235 618 232 637 231 637 237 644 254",
    "phidget": {
        "312483" : [
            0
@@ -464,6 +493,7 @@
        "Gebruiker": "Divers",
        "Planning": "Nog niet bekend"
    },
+   "polygon": "618 396 619 306 643 306 643 396",
    "phidget": {
        "312483" : [
            0
@@ -483,6 +513,7 @@
        "Gebruiker": "divers",
        "Planning": "start bouw eind 2e kwartaal 2018"
    },
+   "polygon": "556 900 576 896 589 896 589 924 558 924",
    "phidget": {
        "312483" : [
            0
@@ -502,6 +533,7 @@
        "Gebruiker": "divers",
        "Planning": "start bouw 2019"
    },
+   "polygon": "391 907 389 889 402 877 408 884 410 905",
    "phidget": {
        "312483" : [
            0
@@ -521,6 +553,7 @@
        "Gebruiker": "divers",
        "Planning": "Nog niet bekend"
    },
+   "polygon": "309 966 306 938 330 936 332 965",
    "phidget": {
        "312483" : [
            0
@@ -540,6 +573,7 @@
        "Gebruiker": "divers",
        "Planning": "Nog niet bekend"
    },
+   "polygon": "255 640 317 577 270 530 238 545",
    "phidget": {
        "312483" : [
            0
@@ -559,6 +593,7 @@
        "Gebruiker": "divers",
        "Planning": "Nog niet bekend"
    },
+   "polygon": "472 616 490 597 474 582 456 599",
    "phidget": {
        "312483" : [
            0
@@ -578,6 +613,7 @@
        "Gebruiker": "Odeklonje, Pimpandoer en Bar Bonaire",
        "Planning": "Medio 2019"
    },
+   "polygon": "",
    "phidget": {
        "312483" : [
            0
@@ -597,6 +633,7 @@
        "Gebruiker": "divers",
        "Planning": "Nog niet bekend"
    },
+   "polygon": "416 672 326 578 219 470 209 456 202 438 222 434 226 448 232 457 335 561 429 659",
    "phidget": {
        "312483" : [
            0
