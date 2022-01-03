@@ -12,7 +12,7 @@
        "Planning": "juni 2014 opgeleverd"
      },
      "phidget": {
-       "312483" : [
+       "A" : [
            0
        ]
    },
@@ -33,8 +33,8 @@
    },
    "polygon": "616 845 618 885 640 880 640 845",
    "phidget": {
-       "312483" : [
-           0
+       "A" : [
+           1
        ]
    },
      "informatie": "www.wsdh.nl en www.kopgroepbibliotheken.nl"
@@ -53,8 +53,8 @@
    },
    "polygon": "558 856 582 856 582 884 558 890",
    "phidget": {
-       "312483" : [
-           0
+       "A" : [
+           2
        ]
    },
      "informatie": "Voor meer informatie over de 24 eenheden: www.vrijwaard.nl"
@@ -73,8 +73,8 @@
    },
    "polygon": "499 868 512 872 512 868 531 867 531 855 551 855 551 887 504 893",
    "phidget": {
-       "312483" : [
-           0
+       "A" : [
+           3
        ]
    },
      "informatie": "Neem voor meer informatie contact op met Woningstichting Den Helder (0223 677677) of bekijk de website  www.wsdh.nl"
@@ -89,11 +89,11 @@
        "Aannemer": "aannemingsbedrijf Dozy BV",
        "Gebruiker": "n.v.t",
        "Planning": "eind 2018 opgeleverd"
-   },
+   }, 
    "polygon": "476 917 538 909 540 932 478 941",
    "phidget": {
-       "312483" : [
-           0
+       "A" : [
+           4
        ]
    },
      "informatie": "Neem voor meer informatie contact op met Woningstichting Den Helder (0223 677677) of bekijk de website  www.wsdh.nl"
@@ -112,8 +112,8 @@
    },
    "polygon": "558 808 558 775 581 775 581 797 570 797 570 808",
    "phidget": {
-       "312483" : [
-           0
+       "A" : [
+           5
        ]
    },
      "informatie": "Neem voor meer informatie contact op met Woningstichting Den Helder (0223 677677) of bekijk de website  www.wsdh.nl"
@@ -132,8 +132,8 @@
    },
    "polygon": "558 706 581 706 581 720 558 720",
    "phidget": {
-       "312483" : [
-           0
+       "A" : [
+           6
        ]
    },
      "informatie": "www.wsdh.nl en www.sheerenloo.nl"
@@ -152,8 +152,8 @@
    },
    "polygon": "538 722 552 722 552 777 538 777 528 768 540 753 491 707 449 751 440 740 495 682",
    "phidget": {
-       "312483" : [
-           0
+       "A" : [
+           7
        ]
    },
      "informatie": "Neem voor meer informatie contact op met Woningstichting Den Helder (0223 677677) of bekijk de website  www.wsdh.nl"
@@ -172,8 +172,8 @@
    },
    "polygon": "558 636 583 636 583 662 558 662",
    "phidget": {
-       "312483" : [
-           0
+       "A" : [
+           8
        ]
    },
      "informatie": "Neem voor meer informatie contact op met Woningstichting Den Helder (0223 677677) of bekijk de website  www.wsdh.nl"
@@ -192,8 +192,8 @@
    },
    "polygon": "519 568 494 593 468 567 480 555 489 564 502 551",
    "phidget": {
-       "312483" : [
-           0
+       "A" : [
+           9
        ]
    },
      "informatie": "Neem voor meer informatie contact op met Woningstichting Den Helder (0223 677677) of bekijk de website  www.wsdh.nl"
@@ -212,8 +212,8 @@
    },
    "polygon": "642 506 618 506 618 401 642 401",
    "phidget": {
-       "312483" : [
-           0
+       "A" : [
+           10
        ]
    },
      "informatie": "Neem voor meer informatie contact op met Woningstichting Den Helder (0223 677677) of bekijk de website  www.wsdh.nl"
@@ -232,8 +232,8 @@
    },
    "polygon": "153 848 200 848 200 875 153 875",
    "phidget": {
-       "312483" : [
-           0
+       "A" : [
+            11
        ]
    },
      "informatie": "Neem voor meer informatie contact op met Coltof makelaardij via www.coltofmakelaardij.nl."
@@ -252,8 +252,8 @@
    },
    "polygon": "264 824 248 809 244 754 310 684 328 706 320 716 318 722 309 733 299 724 286 737 298 748 290 754 311 775",
    "phidget": {
-       "312483" : [
-           0
+       "A" : [
+           12
        ]
    },
      "informatie": "volgt in later stadium"
@@ -272,8 +272,8 @@
    },
    "polygon": "243 1003 239 984 255 973 274 977 276 970 275 964 270 958 268 956 251 955 170 986 234 1050 245 1050",
    "phidget": {
-       "312483" : [
-           0
+       "A" : [
+           13
        ]
    },
      "informatie": "www.denhelder.nl"
@@ -291,8 +291,8 @@
    },
    "polygon": "445 895 445 901 413 903 413 890 416 890 415 887 409 882 421 869",
    "phidget": {
-       "312483" : [
-           0
+       "A" : [
+           14
        ]
    },
      "informatie": "Neem voor meer informatie contact op met Woningstichting Den Helder (0223 677677) of bekijk de website  www.wsdh.nl"
@@ -311,32 +311,13 @@
    },
    "polygon": "339 705 313 676 342 647 371 676",
    "phidget": {
-       "312483" : [
-           0
+       "A" : [
+           15
        ]
    },
      "informatie": "Neem voor meer informatie contact op met Woningstichting Den Helder (0223 677677) of bekijk de website  www.wsdh.nl"
   },
   "17": {
-     "plaatjes": "img_17.jpg",
-     "titel": "De Postbrug",
-     "subtitel": "",
-     "omschrijving": "Dit bestaande pand is herontwikkeld en verhuurd",
-     "punten": {
-       "Architect": "Kapitein Jacobs Kapitein te Den Helder",
-       "Ontwikkelaar": "Woningstichting Den Helder",
-       "Aannemer": "aannemingsbedrijf Dozy BV",
-       "Gebruiker": "huurder is Leger des Heils",
-       "Planning": "opgeleverd 2007"
-   },
-   "phidget": {
-       "312483" : [
-           0
-       ]
-   },
-     "informatie": "n.v.t."
-  },
-  "18": {
      "plaatjes": "img_18.jpg",
      "titel": "Prins Hendrik Kwartier",
      "omschrijving": "Woningstichting Den Helder realiseert op de locatie van het voormalige VBM-gebouw 3 grondgebonden woningen en 6 appartementen. De drie grondgebonden woningen worden voorzien van een woonkamer met open keuken en een tuin met berging. Op de verdieping komen 3 slaapkamers en een badkamer. De zolderverdieping is bereikbaar via een vaste trap. De zes appartementen worden verdeeld over  een blok van drie woonlagen (twee appartementen per woonlaag). Het gebouw wordt voorzien van een centraal trappenhuis en een lift. De appartementen zullen bestaan uit 2 slaapkamers, een woonkamer met keuken en een eigen buitenruimte met een berging.",
@@ -348,14 +329,14 @@
        "Planning": "Verwachte oplevering: begin 2019"
    },
    "phidget": {
-       "312483" : [
-           0
+       "B" : [
+           1
        ]
    },
    "polygon": "288 669 276 681 272 678 270 679 270 689 257 689 252 662 258 662 260 653 266 647",
      "informatie": "Voor meer informatie kunt u contact opnemen met de verkoopmakelaar Coltof , telefoonnummer (0223) 200005 of via de website www.coltofmakelaardij.nl/ ."
   },
-  "19": {
+  "18": {
      "plaatjes": "img_19.jpg",
      "titel": "De Vijfsprong",
      "subtitel": "",
@@ -368,54 +349,14 @@
        "Planning": "opgeleverd 2005"
    },
    "phidget": {
-       "312483" : [
-           0
+       "B" : [
+           2
        ]
    },
    "polygon": "70 1010 54 1026 35 1008 47 1000 59 1000 59 988 48 988 48 980 61 978 61 974 74 973 79 1008",
      "informatie": "www.wsdh.nl"
   },
-  "20": {
-     "plaatjes": "img_20.jpg",
-     "titel": "Schouwburg de Kampanje",
-     "subtitel": "",
-     "omschrijving": "Wie straks Den Helder binnen komt rijden of varen, wordt verwelkomd door een spraakmakend gebouw aan de Maritieme Binnenhaven: de schouwburg van Den Helder. Op de oude Rijkswerf Willemsoord krijgt Den Helder een van de meest bijzondere schouwburgen van het land. Deze schouwburg is zelfs het boegbeeld van de transformatie van Willemsoord. De nieuwe invulling toont respect voor de monumentale waarden van het gebied en de panden, het benadrukt het karakter van de werf. Als locatie is gekozen voor de voormalige Ketelmakerij (1920) in combinatie met De Kathedraal (1916), het voormalige Machinaal of Bankwerkerij. De vestiging van de schouwburg in deze gebouwen geeft een compleet nieuwe identiteit aan de entree van de stad.",
-     "punten": {
-       "Architect": "Van Dongen-Koschuch",
-       "Ontwikkelaar": "Zeestad i.s.m. gemeente Den Helder",
-       "Aannemer": "Bouwbedrijf M.J. de Nijs en Zonen BV uit Warmenhuizen",
-       "Gebruiker": "huurder complete planvorming schouwburg de Kampanje",
-       "Planning": "2015 opgeleverd"
-   },
-   "polygon": "",
-   "phidget": {
-       "312483" : [
-           0
-       ]
-   },
-     "informatie": "zie www.zeestad.nl en www.kampanje.nl"
-  },
-  "21": {
-     "plaatjes": "img_21.jpg",
-     "titel": "Westgracht 65",
-     "subtitel": "",
-     "omschrijving": "Aan- en verbouw bestaand pand, functies zijn: combinatie van wonen en werken",
-     "punten": {
-       "Architect": "Hugo van der Laan",
-       "Ontwikkelaar": "Woningstichting Den Helder",
-       "Aannemer": "aannemingsbedrijf Dozy BV",
-       "Gebruiker": "het object staat zowel te huur als te koop",
-       "Planning": "2016 opgeleverd"
-   },
-   "polygon": "",
-   "phidget": {
-       "312483" : [
-           0
-       ]
-   },
-     "informatie": "Neem voor meer informatie contact op met Woningstichting Den Helder (0223 677677) of bekijk de website  www.wsdh.nl"
-  },
-  "22": {
+  "19": {
      "plaatjes": "img_22.jpg",
      "titel": "Parkeergarage Sluisdijkstraat",
      "subtitel": "",
@@ -429,13 +370,13 @@
    },
    "polygon": "",
    "phidget": {
-       "312483" : [
-           0
+       "B" : [
+           8
        ]
    },
      "informatie": "zie o.a. http://www.p1.nl/parkeren/den-helder"
   },
-  "23": {
+  "20": {
      "plaatjes": "img_23.jpg",
      "titel": "Watertoren Den Helder",
      "subtitel": "",
@@ -455,13 +396,13 @@
     "rx": "15"
    },
    "phidget": {
-       "312483" : [
-           0
+       "B" : [
+           6
        ]
    },
      "informatie": "n.v.t."
   },
-  "24": {
+  "21": {
      "plaatjes": "img_24.jpg",
      "titel": "Over het Wad",
      "subtitel": "",
@@ -475,13 +416,13 @@
    },
    "polygon": "644 299 617 299 605 283 587 268 564 261 545 262 543 257 605 235 618 232 637 231 637 237 644 254",
    "phidget": {
-       "312483" : [
-           0
+       "B" : [
+           7
        ]
    },
      "informatie": "Meer informatie staat op de website www.overhetwad.com"
   },
-  "25": {
+  "22": {
      "plaatjes": "no-image.png",
      "titel": "Molenplein fase 2",
      "subtitel": "",
@@ -495,13 +436,13 @@
    },
    "polygon": "618 396 619 306 643 306 643 396",
    "phidget": {
-       "312483" : [
-           0
+       "B" : [
+           8
        ]
    },
      "informatie": ""
   },
-  "26": {
+  "23": {
      "plaatjes": "img_26.jpg",
      "titel": "De Kamerheer",
      "subtitel": "",
@@ -515,13 +456,13 @@
    },
    "polygon": "556 900 576 896 589 896 589 924 558 924",
    "phidget": {
-       "312483" : [
-           0
+       "B" : [
+           9
        ]
    },
      "informatie": "Neem voor meer informatie contact op met Woningstichting Den Helder (0223 677677) of bekijk de website  www.wsdh.nl"
   },
-  "27": {
+  "24": {
      "plaatjes": "img_27.jpg",
      "titel": "Casino Flamingo Beatrixstraat",
      "subtitel": "",
@@ -535,13 +476,13 @@
    },
    "polygon": "391 907 389 889 402 877 408 884 410 905",
    "phidget": {
-       "312483" : [
-           0
+       "B" : [
+           10
        ]
    },
      "informatie": "Nog niet bekend"
   },
-  "28": {
+  "25": {
      "plaatjes": "img_28.jpg",
      "titel": "Hotel Wienerhof",
      "subtitel": "",
@@ -555,13 +496,13 @@
    },
    "polygon": "309 966 306 938 330 936 332 965",
    "phidget": {
-       "312483" : [
-           0
+       "B" : [
+           11
        ]
    },
      "informatie": "Nog niet bekend"
   },
-  "29": {
+  "26": {
      "plaatjes": "img_29.jpg",
      "titel": "Koningsdriehoek",
      "subtitel": "",
@@ -575,13 +516,13 @@
    },
    "polygon": "255 640 317 577 270 530 238 545",
    "phidget": {
-       "312483" : [
-           0
+       "B" : [
+           12
        ]
    },
      "informatie": "Nog niet bekend"
   },
-  "30": {
+  "27": {
      "plaatjes": "img_30.jpg",
      "titel": "Spoorstraat oude casino locatie",
      "subtitel": "",
@@ -595,33 +536,13 @@
    },
    "polygon": "472 616 490 597 474 582 456 599",
    "phidget": {
-       "312483" : [
-           0
+       "B" : [
+           13
        ]
    },
      "informatie": "Nog niet bekend"
   },
-  "31": {
-     "plaatjes": "img_31.jpg",
-     "titel": "Willemsoord",
-     "subtitel": "",
-     "omschrijving": "Gebouw 51 op de oude Rijkswerf wordt momenteel verbouwd voor dedrie horeca-etablissementen Odeklonje, Pimpandoer en Bar Bonaire. Momenteel zitten die nog in de Koningstraat.",
-     "punten": {
-       "Architect": "n.v.t.",
-       "Ontwikkelaar": "A. Tuin Den Helder BV",
-       "Aannemer": "Nog niet bekend",
-       "Gebruiker": "Odeklonje, Pimpandoer en Bar Bonaire",
-       "Planning": "Medio 2019"
-   },
-   "polygon": "",
-   "phidget": {
-       "312483" : [
-           0
-       ]
-   },
-     "informatie": "N.v.t."
-  },
-  "32": {
+  "28": {
      "plaatjes": "img_32.jpg",
      "titel": "Konings- en Spoorstraat",
      "subtitel": "",
@@ -635,8 +556,8 @@
    },
    "polygon": "416 672 326 578 219 470 209 456 202 438 222 434 226 448 232 457 335 561 429 659",
    "phidget": {
-       "312483" : [
-           0
+       "B" : [
+           15
        ]
    },
      "informatie": "Nog niet bekend"

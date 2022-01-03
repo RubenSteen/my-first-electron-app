@@ -16,6 +16,16 @@ protocol.registerSchemesAsPrivileged([
 //let projects = JSON.parse(fs.readFileSync(projectsJson));
 let projects = projectsJson;
 
+let phidgets = {
+  "A": 312483,
+  "B": 478550,
+  "C": 257037
+};
+
+function getPhidghetSerial(phidget) {
+  return phidgets[phidget]
+}
+
 async function createWindow() {
   // Create the browser window.
 
@@ -181,14 +191,17 @@ function activateLights(data) {
   // Filter out the PhidgetLight instances that now should be activated by serial and channel
 
   // // Looping over the phidget data that is being send by the renderer process
-  for (const serial in data) {
+  for (const phidgetLetter in data) {
+    let serial = getPhidghetSerial(phidgetLetter);
 
-    for (const key in data[serial]) {
+    for (const key in data[phidgetLetter]) {
 
-      let channel = data[serial][key];
+      let channel = data[phidgetLetter][key];
+
+      
 
       registeredPhidgets
-        .filter(value => value.getSerial() === serial && value.getChannel() === channel)
+        .filter(value => value.getSerial() == serial && value.getChannel() === channel)
         // and activate each
         .forEach(phidgetLight => phidgetLight.activate());
     }
@@ -226,10 +239,12 @@ async function initializePhidgets(projects) {
   for (var projectKey in projects) {
     var projectPhidget = projects[projectKey]['phidget'];
 
-    for (var phidgetSerial in projectPhidget) {
+    for (var phidgetLetter in projectPhidget) {
 
-      for (var phidgetChannel in projectPhidget[phidgetSerial]) {
-        let channel = projectPhidget[phidgetSerial][phidgetChannel];
+      let phidgetSerial = getPhidghetSerial(phidgetLetter);
+
+      for (var phidgetChannel in projectPhidget[phidgetLetter]) {
+        let channel = projectPhidget[phidgetLetter][phidgetChannel];
 
         setTimeout(function() {
           if (registeredPhidgets.filter(value => value.getSerial() == phidgetSerial && value.getChannel() == channel).length === 0) {

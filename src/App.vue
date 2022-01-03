@@ -35,7 +35,8 @@
     <transition name="slide-fade" v-for="(project, index) in projects" :key="index">
       <main v-if="show == index" class="text-sm flex flex-col h-full bg-white">
         <div id="slider">
-          <img :src="require('@/assets/images/projects/' + project.plaatjes)" /> 
+          <img v-if="project.plaatjes !== null && project.plaatjes !== undefined" :src="require('@/assets/images/projects/' + project.plaatjes)" /> 
+          <img v-else :src="require('@/assets/images/projects/no-image.png')" /> 
         </div>
         <div id="title" class="m-auto mt-2 mx-8 flex flex-col text-gray-700">
           <h2 class="text-3xl mx-auto">{{ project.titel }}</h2>
@@ -242,6 +243,14 @@ export default {
         /* -webkit-filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7));
         filter: drop-shadow( 3px 3px 2px rgba(0, 0, 0, .7)); */
         /* Similar syntax to box-shadow */
+
+        -webkit-touch-callout:none;
+        -webkit-user-select:none;
+        -khtml-user-select:none;
+        -moz-user-select:none;
+        -ms-user-select:none;
+        user-select:none;
+        -webkit-tap-highlight-color:rgba(0,0,0,0);
       }
 
       .img-overlay-wrap rect {
