@@ -78,6 +78,8 @@ export default {
       testRunning: false,
       keepOpen: 60, // In seconds
       openedAt: null,
+      lastInteraction: null,
+      refreshAfter: 900, // In seconds
       projects: projectJson,
       cordinates: [] // In development add cordinates so you can add projects more quickly
     }
@@ -132,9 +134,14 @@ export default {
       this.openedAt = Math.floor(Date.now() / 1000);
     },
 
+    setLastInteraction() {
+      this.lastInteraction = Math.floor(Date.now() / 1000);
+    },
+
     keepAlive() {
       window.ipcRenderer.send('keep-alive')
       console.log('hit frondend')
+      this.setLastInteraction()
       
       if (this.show !== null) {
         if (this.loading == false) {
@@ -190,6 +197,14 @@ export default {
             }
           }
         }
+
+        let refreshAt = (this.lastInteraction + this.refreshAfter);
+        if (Math.floor(Date.now() / 1000) >= refreshAt) {
+          console.log('Refreshing the page');
+          location.reload();
+          console.log('Refreshed the page successfully')
+        }
+
       },2000);
     })
 
@@ -208,6 +223,8 @@ export default {
         console.log('Cordinates reset')
       }
     });
+
+    this.setLastInteraction()
 
     //closeCurrentProject
     // window.ipcRenderer.on('ping', function(event, message) {
